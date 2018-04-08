@@ -1,0 +1,80 @@
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\csc.exe
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\System.Collections.Immutable.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\vbc.exe
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\VBCSCompiler.exe
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\roslyn\VBCSCompiler.exe.config
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\YUYITOS.Vista.dll.config
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\YUYITOS.Vista.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\YUYITOS.Vista.pdb
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.csprojResolveAssemblyReference.cache
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.dll
+c:\users\katherin\documents\visual studio 2015\Projects\YUYITOS WebApp\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.pdb
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\csc.exe
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\vbc.exe
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\VBCSCompiler.exe
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\YUYITOS.Vista.dll.config
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\YUYITOS.Vista.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\YUYITOS.Vista.pdb
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.csprojResolveAssemblyReference.cache
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.pdb
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\csc.exe
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\vbc.exe
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\VBCSCompiler.exe
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\YUYITOS.Vista.dll.config
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\YUYITOS.Vista.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\YUYITOS.Vista.pdb
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.csprojResolveAssemblyReference.cache
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.dll
+C:\Users\casto\Desktop\Proyectos Duoc\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.pdb
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\csc.exe
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\vbc.exe
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\VBCSCompiler.exe
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\YUYITOS.Vista.dll.config
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\YUYITOS.Vista.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\YUYITOS.Vista.pdb
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.csprojResolveAssemblyReference.cache
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Vista\obj\Debug\YUYITOS.Vista.pdb

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Index.aspx" title="Página de inicio"  description="">
+        <siteMapNode url="RegClientesFiados.aspx" title="Registro de Clientes Fiados"  description="" />
+        <siteMapNode url="RegOrdenPedido.aspx" title="Registro de Orden de Pedido"  description="" />
+        <siteMapNode url="RegPagoAbonos.aspx" title="Registro de Pago de Abonos"  description="" />
+        <siteMapNode url="RegProveedores.aspx" title="Registro de Proveedores"  description="" />
+        <siteMapNode url="RegRecepcionProducto.aspx" title="Registro de Recepción de Productos"  description="" />
+        <siteMapNode url="Administrador.aspx" title="Administrador"  description="" />
+        <siteMapNode url="RegVentasRealizadas.aspx" title="Registro de Ventas Realizadas"  description="" />
+        <siteMapNode url="Informes.aspx" title="Informes"  description="" />
+    </siteMapNode>
+</siteMap>
