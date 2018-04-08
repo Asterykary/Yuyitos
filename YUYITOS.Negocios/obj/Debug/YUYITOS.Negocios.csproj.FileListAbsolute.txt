@@ -1,0 +1,5 @@
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Negocios\bin\Debug\YUYITOS.Negocios.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Negocios\bin\Debug\YUYITOS.Negocios.pdb
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Negocios\obj\Debug\YUYITOS.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Negocios\obj\Debug\YUYITOS.Negocios.dll
+C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Negocios\obj\Debug\YUYITOS.Negocios.pdb
