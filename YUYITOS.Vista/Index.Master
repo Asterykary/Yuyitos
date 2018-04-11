@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <meta name="viewport" content="width=device-width, inital-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -18,8 +18,8 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div class="nav-side-menu">
-        <div class="brand"><i class="fas fa-shopping-bag"></i> SG - "Almacén Los YUYITOS"</div>
+    <div class="nav-side-menu animated fadeIn">
+        <div class="brand"><i class="fas fa-shopping-bag"></i> Sistema de Gestión<br />"Almacén Los YUYITOS"</div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
             <div class="menu-list">
@@ -76,14 +76,15 @@
          </div>
     </div>
     
-    <div id="contenidoc" class="contenidoc">
-        <div id="ruta">
-            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
-
-            </asp:SiteMapPath>
+    <div id="contenidoc" class="contenidoc animated fadeIn  ">
+        <div id="navbar">
+            <strong>Miércoles, 11 de abril del 2018 - 10:54</strong>
         </div>
         
         <div class="container">
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+
+            </asp:SiteMapPath>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
             </asp:ContentPlaceHolder>
