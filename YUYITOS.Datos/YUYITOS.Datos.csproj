@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -44,13 +48,110 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABONO_FIADO.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDYuyitosModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDYuyitosModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDYuyitosModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDYuyitosModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDYuyitosModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BOLETA.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CIUDAD.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE_FIADO.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETALLE_BOLETA.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETALLE_ORDEN.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETALLE_RECEPCION.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DETALLE_STOCK.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FAMILIA.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDEN.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTO.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PROVEEDOR.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECEPCION.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_ALIMENTO.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_PRODUCTO.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_USUARIO.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIO.cs">
+      <DependentUpon>BDYuyitosModel1.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BDYuyitosModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BDYuyitosModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="BDYuyitosModel1.edmx.diagram">
+      <DependentUpon>BDYuyitosModel1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BDYuyitosModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDYuyitosModel1.edmx</DependentUpon>
+      <LastGenOutput>BDYuyitosModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BDYuyitosModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDYuyitosModel1.edmx</DependentUpon>
+      <LastGenOutput>BDYuyitosModel1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
