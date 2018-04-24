@@ -7,7 +7,7 @@
         <siteMapNode url="RegProveedores.aspx" title="Registro de Proveedores"  description="" />
         <siteMapNode url="RegRecepcionProducto.aspx" title="Registro de Recepción de Productos"  description="" />
         <siteMapNode url="Administrador.aspx" title="Administrador"  description="" />
-        <siteMapNode url="RegVentasRealizadas.aspx" title="Registro de Ventas Realizadas"  description="" />
+        <siteMapNode url="RegVentasRealizadas.aspx" title="Registro de Ventas"  description="" />
         <siteMapNode url="Informes.aspx" title="Informes"  description="" />
     </siteMapNode>
 </siteMap>
