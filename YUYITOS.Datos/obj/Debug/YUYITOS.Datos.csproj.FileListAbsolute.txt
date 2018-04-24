@@ -1,5 +1,0 @@
-C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Datos\bin\Debug\YUYITOS.Datos.dll
-C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Datos\bin\Debug\YUYITOS.Datos.pdb
-C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Datos\obj\Debug\YUYITOS.Datos.csprojResolveAssemblyReference.cache
-C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Datos\obj\Debug\YUYITOS.Datos.dll
-C:\Users\luis\Documents\Visual Studio 2015\Projects\Yuyitos\YUYITOS.Datos\obj\Debug\YUYITOS.Datos.pdb
