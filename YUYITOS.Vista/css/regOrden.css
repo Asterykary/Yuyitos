@@ -1,0 +1,11 @@
+﻿.custom-select, .form-control {
+    width: 300px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    width: 100px; 
+}

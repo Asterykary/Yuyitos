@@ -18,7 +18,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div class="nav-side-menu animated fadeIn">
+    <div class="nav-side-menu">
         <div class="brand"><i class="fas fa-shopping-bag"></i> Sistema de Gestión<br />"Almacén Los YUYITOS"</div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
@@ -85,9 +85,14 @@
             <asp:SiteMapPath ID="SiteMapPath1" runat="server">
 
             </asp:SiteMapPath>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <form runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
-            </asp:ContentPlaceHolder>
+                </asp:ContentPlaceHolder>
+            </form>
+                
+            
+            
         </div>
         
     </div>
