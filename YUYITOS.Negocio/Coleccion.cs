@@ -9,6 +9,8 @@ namespace YUYITOS.Negocio
     public class Coleccion
     {
         public List<Producto> carrito = new List<Producto>();
+        
+        public List<Producto> carritoVenta = new List<Producto>();
         public List<Producto> ListadoProductos()
         {
             List<Producto> salida = new List<Producto>();
@@ -59,6 +61,40 @@ namespace YUYITOS.Negocio
                 salida.Add(new DetalleOrden()
                 {
                     ID_DETALLE_ORDEN = unaOrden.ID_DETALLE_ORDEN
+                });
+            }
+            return salida;
+        }
+
+        public List<Stock> ListadoStock()
+        {
+            List<Stock> salida = new List<Stock>();
+            foreach (Dato.STOCK unStock in Conexion.YuyitosDB.STOCK)
+            {
+                salida.Add(new Stock()
+                {
+                    ID_STOCK = unStock.ID_STOCK,
+                    FECHA_VENCIMIENTO = unStock.FECHA_VENCIMIENTO,
+                    CODIGO_BARRA = unStock.CODIGO_BARRA,
+                    PRODUCTO_ID_PRODUCTO = unStock.PRODUCTO_ID_PRODUCTO,
+                    PROVEEDOR_ID_PROVEEDOR = unStock.PROVEEDOR_ID_PROVEEDOR
+                });
+            }
+            return salida;
+        }
+
+        public List<DetalleStock> ListadoDetalleStock()
+        {
+            List<DetalleStock> salida = new List<DetalleStock>();
+            foreach (Dato.DETALLE_STOCK unStock in Conexion.YuyitosDB.DETALLE_STOCK)
+            {
+                salida.Add(new DetalleStock()
+                {
+                    ID_DETALLE_STOCK = unStock.ID_DETALLE_STOCK,
+                    CANT_DETALLE_STOCK = unStock.CANT_DETALLE_STOCK,
+                    CODIGO_BARRA = unStock.CODIGO_BARRA,
+                    PRODUCTO_ID_PRODUCTO = unStock.PRODUCTO_ID_PRODUCTO,
+                    STOCK_ID_STOCK = unStock.STOCK_ID_STOCK
                 });
             }
             return salida;

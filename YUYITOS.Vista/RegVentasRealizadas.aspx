@@ -5,58 +5,45 @@
     <br/>
     <div class="container">
 		<h1>Registro de ventas</h1>
-		<br/>
+        <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+        <br />
 		<div class="row">
 			<div class="col">
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="basic-addon1">Codigo Producto</span>
 				  </div>
-				  <input type="text" class="form-control" placeholder="Ingrese codigo" aria-describedby="basic-addon1">
+                    <asp:TextBox ID="txtCodProducto" runat="server" CssClass="form-control"></asp:TextBox>
+				</div>
+                <div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="basic-addon2">Cantidad</span>
+				  </div>
+                    <asp:TextBox ID="txtCantidad" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                    <asp:Label ID="lblErrorCantidad" runat="server" Text=""></asp:Label>
 				</div>
 			</div>
 			<div class="col">
-				<button type="button" class="btn btn-primary">Agregar</button>
+                <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" CssClass="btn btn-primary" />
 			</div>
 		</div>
 		<br>
-		<table class="table">
-		  <thead>
-		    <tr>
-		      <th scope="col">Descripcion</th>
-		      <th scope="col">Precio</th>
-		      <th scope="col">Total</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <td>Super 8</td>
-		      <td>$200</td>
-		      <td>$200</td>
-		    </tr>
-		    <tr>
-		      <td>Manzana</td>
-		      <td>$100</td>
-		      <td>$100</td>
-		    </tr>
-		    <tr>
-		      <td></td>
-		      <td></td>
-		      <th>Total: $300</th>
-		    </tr>
-		  </tbody>
-		</table>
-
-		<div class="custom-control custom-radio">
-		  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-		  <label class="custom-control-label" for="customRadio1">Fiado</label>
-		</div>
-		<div class="custom-control custom-radio">
-		  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-		  <label class="custom-control-label" for="customRadio2">No fiado</label>
-		</div>
+        <asp:Table ID="tablaProductos" runat="server" CssClass="table table-light" Visible="False">
+            <asp:TableRow>
+                <asp:TableHeaderCell>Item</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Descripción</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Cantidad</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Precio unitario</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Precio total</asp:TableHeaderCell>
+            </asp:TableRow>
+        </asp:Table>
+		
+        <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+            <asp:ListItem Text="&nbsp;Fiado" />
+            <asp:ListItem Text="&nbsp;No fiado" Selected="True" />
+        </asp:RadioButtonList>
 		<br>
-		<button type="button" class="btn btn-success">Realizar venta</button>
+        <asp:Button ID="btnRealizarVenta" runat="server" OnClick="btnRealizarVenta_Click" Text="Realizar venta" CssClass="btn btn-success" />
 	</div>
 
 </asp:Content>
