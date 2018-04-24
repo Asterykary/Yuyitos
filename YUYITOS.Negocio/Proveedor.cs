@@ -15,6 +15,7 @@ namespace YUYITOS.Negocio
         public int TELEFONO { get; set; }
         public string RUBRO { get; set; }
         public int CIUDAD_ID_CIUDAD { get; set; }
+        public string Nombre_Ciudad { get; set; }
 
         public Proveedor()
         {
@@ -32,10 +33,20 @@ namespace YUYITOS.Negocio
             CIUDAD_ID_CIUDAD = 1;
         }
 
-        public string GetId()
+        public int GetId()
         {
-            int ID = (int)ID_PROVEEDOR;
-            return ID.ToString();
+            Coleccion col = new Coleccion();
+            decimal aux;
+            try
+            {
+                aux = col.ListadoDetalleOrden().Max(em => em.ID_DETALLE_ORDEN);
+            }
+            catch (Exception)
+            {
+                aux = 0;
+            }
+
+            return (int)aux;
         }
 
 
@@ -56,6 +67,50 @@ namespace YUYITOS.Negocio
             }
             catch (Exception )
             {
+                return false;
+            }
+        }
+        public bool Registrar()
+        {
+            try
+            {
+                Dato.PROVEEDOR prove = new Dato.PROVEEDOR()
+                {
+                    RUT = RUT,
+                    DV = DV,
+                    ID_PROVEEDOR = ID_PROVEEDOR,
+                    NOMBRE = NOMBRE,
+                    TELEFONO = TELEFONO,
+                    RUBRO = RUBRO,
+                    CIUDAD_ID_CIUDAD = CIUDAD_ID_CIUDAD
+                };
+                Conexion.YuyitosDB.PROVEEDOR.Add(prove);
+                Conexion.YuyitosDB.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public bool Actualizar()
+        {
+            try
+            {
+                Dato.PROVEEDOR prove = Conexion.YuyitosDB.PROVEEDOR.First(p => p.RUT == RUT && p.DV == DV);
+                prove.ID_PROVEEDOR = ID_PROVEEDOR;
+                prove.NOMBRE = NOMBRE;
+                prove.TELEFONO = TELEFONO;
+                prove.RUBRO = RUBRO;
+                prove.CIUDAD_ID_CIUDAD = CIUDAD_ID_CIUDAD;
+                Conexion.YuyitosDB.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
                 return false;
             }
         }

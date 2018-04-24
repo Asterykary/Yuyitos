@@ -11,7 +11,19 @@ namespace YUYITOS.Negocio
         public int ID_DETALLE_ORDEN { get; set; }
         public string DESCRIPCION { get; set; }
         public int ORDEN_ID_ORDEN { get; set; }
-        public int CANT_DETALLE_O { get; set; }
+        private int _CANT_DETALLE_O;
+
+        public int CANT_DETALLE_O
+        {
+            get { return _CANT_DETALLE_O; }
+            set {
+                if (value > 0)
+                    _CANT_DETALLE_O = value;
+                else
+                    throw new ArgumentException("La cantidad debe ser mayor a 0");
+            }
+        }
+
         public int PRODUCTO_ID_PRODUCTO { get; set; }
 
 

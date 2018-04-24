@@ -40,6 +40,7 @@
                             </th>
                             <th>
                                 <asp:TextBox ID="txtCantidad" runat="server" CssClass="form-control" Enabled="True"></asp:TextBox>
+                                <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                             </th>
                         </tr>
                         <tr>

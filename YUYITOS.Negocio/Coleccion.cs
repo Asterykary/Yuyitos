@@ -99,5 +99,33 @@ namespace YUYITOS.Negocio
             }
             return salida;
         }
+
+
+        public List<Proveedor> ObtenerRubroProveedor()
+        {
+            List<Proveedor> listaRubro = new List<Proveedor>();
+            foreach (Dato.PROVEEDOR prove in Conexion.YuyitosDB.PROVEEDOR)
+            {
+                listaRubro.Add(new Proveedor()
+                {
+                    RUBRO = prove.RUBRO,
+                });
+            }
+            return listaRubro;
+        }
+
+        public List<Ciudad> ObtenerCiudad()
+        {
+            List<Ciudad> listaCiudad = new List<Ciudad>();
+            foreach (Dato.CIUDAD ciudad in Conexion.YuyitosDB.CIUDAD)
+            {
+                listaCiudad.Add(new Ciudad()
+                {
+                    ID_CIUDAD = ciudad.ID_CIUDAD,
+                    DESCRIPCION = ciudad.DESCRIPCION
+                });
+            }
+            return listaCiudad;
+        }
     }
 }
