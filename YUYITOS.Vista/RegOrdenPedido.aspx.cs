@@ -54,9 +54,25 @@ namespace YUYITOS.Vista
         protected void btnAgregar_Click(object sender, EventArgs e)
         {   
             var producto = (Producto)con.ListadoProductos().First(p => p.Descripcion == DropDownList2.SelectedItem.Text);
-            producto.Cantidad = int.Parse(txtCantidad.Text);
+            try
+            {
+                producto.Cantidad = int.Parse(txtCantidad.Text);
+            }
+            catch(FormatException fe )
+            {
+                lblError.Text = "La cantidad no puede ir vacia";
+                return;
+            }
+            catch (ArgumentException ex)
+            {
+                mostrarLista();
+                lblError.Text = ex.Message;
+                return;
+            }
+            
             con.carrito.Add(producto);
             txtCantidad.Text = string.Empty;
+            lblError.Text = string.Empty;
             mostrarLista();
         }
 

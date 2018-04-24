@@ -15,7 +15,21 @@ namespace YUYITOS.Negocio
         public int Id_tipo_producto { get; set; }
         public int Id_familia { get; set; }
         public int? Id_tipo_alimento { get; set; }
-        public int? Cantidad { get; set; }
+        private int? _Cantidad;
+
+        public int? Cantidad
+        {
+            get { return _Cantidad; }
+            set {
+                if (value > 0)
+                    _Cantidad = value;
+                else
+                    throw new ArgumentException("La cantidad debe ser mayor a 0");
+            }
+        }
+
+
+        public string Nombre_Ciudad { get; set; }
 
         public Producto()
         {
