@@ -40,3 +40,17 @@ D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Negocio.pdb
 D:\Yuyitos\YUYITOS.Test\bin\Debug\EntityFramework.xml
 D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Dato.pdb
 D:\Yuyitos\YUYITOS.Test\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Test.dll.config
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Test.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Test.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\EntityFramework.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Negocio.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Dato.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Negocio.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\EntityFramework.xml
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Dato.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.csprojResolveAssemblyReference.cache
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.pdb
