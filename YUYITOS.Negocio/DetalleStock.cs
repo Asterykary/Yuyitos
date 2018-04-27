@@ -11,8 +11,9 @@ namespace YUYITOS.Negocio
         public int ID_DETALLE_STOCK { get; set; }
         public int CANT_DETALLE_STOCK { get; set; }
         public int CODIGO_BARRA { get; set; }
-        public int PRODUCTO_ID_PRODUCTO { get; set; }
-        public decimal STOCK_ID_STOCK { get; set; }
+        public int STOCK_ID_STOCK { get; set; }
+
+        public int PRODUCTO_PROVEEDOR_ID { get; set; }
 
         public DetalleStock()
         {
@@ -44,8 +45,8 @@ namespace YUYITOS.Negocio
                     ID_DETALLE_STOCK = ID_DETALLE_STOCK,
                     CANT_DETALLE_STOCK = CANT_DETALLE_STOCK,
                     CODIGO_BARRA = CODIGO_BARRA,
-                    PRODUCTO_ID_PRODUCTO = PRODUCTO_ID_PRODUCTO,
-                    STOCK_ID_STOCK = STOCK_ID_STOCK
+                    STOCK_ID_STOCK = STOCK_ID_STOCK,
+                    PRODUCTO_PROVEEDOR_ID = PRODUCTO_PROVEEDOR_ID
                 };
                 Conexion.YuyitosDB.DETALLE_STOCK.Add(unStock);
                 Conexion.YuyitosDB.SaveChanges();
@@ -65,8 +66,8 @@ namespace YUYITOS.Negocio
                 ID_DETALLE_STOCK = unStock.ID_DETALLE_STOCK;
                 CANT_DETALLE_STOCK = unStock.CANT_DETALLE_STOCK;
                 CODIGO_BARRA = unStock.CODIGO_BARRA;
-                STOCK_ID_STOCK = unStock.STOCK_ID_STOCK;
-                PRODUCTO_ID_PRODUCTO = unStock.PRODUCTO_ID_PRODUCTO;
+                STOCK_ID_STOCK =(int)unStock.STOCK_ID_STOCK;
+                PRODUCTO_PROVEEDOR_ID = unStock.PRODUCTO_PROVEEDOR_ID;
 
                 return true;
             }
@@ -85,7 +86,7 @@ namespace YUYITOS.Negocio
                 unStock.CANT_DETALLE_STOCK = CANT_DETALLE_STOCK;
                 unStock.CODIGO_BARRA = CODIGO_BARRA;
                 unStock.STOCK_ID_STOCK = STOCK_ID_STOCK;
-                unStock.PRODUCTO_ID_PRODUCTO = PRODUCTO_ID_PRODUCTO;
+                unStock.PRODUCTO_PROVEEDOR_ID = PRODUCTO_PROVEEDOR_ID;
                 Conexion.YuyitosDB.SaveChanges();
                 return true;
             }

@@ -48,15 +48,15 @@ namespace YUYITOS.Vista
             {
                 Proveedor prove = new Proveedor()
                 {
-                    RUT = int.Parse(txtRut.Text),
-                    DV = txtDV.Text
+                    //RUT = int.Parse(txtRut.Text),
+                    //DV = txtDV.Text
                 };
                 if (prove.Read())
                 {
                     txtNombre.Text = prove.NOMBRE;
                     txtTelefono.Text = prove.TELEFONO.ToString();
                     ddlRubro.SelectedValue = prove.RUBRO;
-                    ddlCiudad.SelectedItem.Text = prove.Nombre_Ciudad;
+                    //ddlCiudad.SelectedItem.Text = prove.Nombre_Ciudad;
                 }
             }
             catch (Exception)
@@ -71,26 +71,26 @@ namespace YUYITOS.Vista
             try
             {
                 Proveedor prove = new Proveedor();
-                prove.RUT = int.Parse(txtRut.Text);
-                prove.DV = txtDV.Text;
+                //prove.RUT = int.Parse(txtRut.Text);
+                //prove.DV = txtDV.Text;
 
                 if (prove.Read())
                 {
                     prove.NOMBRE = txtNombre.Text;
                     prove.TELEFONO = int.Parse(txtTelefono.Text);
                     prove.RUBRO = ddlRubro.SelectedValue;
-                    prove.CIUDAD_ID_CIUDAD = int.Parse(ddlCiudad.SelectedValue);
+                    //prove.CIUDAD_ID_CIUDAD = int.Parse(ddlCiudad.SelectedValue);
 
-                    if (prove.Actualizar() == false)
-                    {
-                        lblMensaje.Text = "La actualizacion ha fallado";
-                        return;
-                    }
-                    else
-                    {
-                        lblMensaje.Text = "Se ha actualizado exitosamente";
-                        Limpiar();
-                    }
+                    //if (prove.Actualizar() == false)
+                    //{
+                    //    lblMensaje.Text = "La actualizacion ha fallado";
+                    //    return;
+                    //}
+                    //else
+                    //{
+                    //    lblMensaje.Text = "Se ha actualizado exitosamente";
+                    //    Limpiar();
+                    //}
                 }
                 else
                 {
@@ -98,18 +98,18 @@ namespace YUYITOS.Vista
                     prove.NOMBRE = txtNombre.Text;
                     prove.TELEFONO = int.Parse(txtTelefono.Text);
                     prove.RUBRO = ddlRubro.SelectedValue;
-                    prove.CIUDAD_ID_CIUDAD = int.Parse(ddlCiudad.SelectedValue);
+                    //prove.CIUDAD_ID_CIUDAD = int.Parse(ddlCiudad.SelectedValue);
 
-                    if (prove.Registrar() == false)
-                    {
-                        lblMensaje.Text = "El registro a fallado";
-                        return;
-                    }
-                    else
-                    {
-                        lblMensaje.Text = "Su Registro ha sido exitoso";
-                        Limpiar();
-                    }
+                    //if (prove.Registrar() == false)
+                    //{
+                    //    lblMensaje.Text = "El registro a fallado";
+                    //    return;
+                    //}
+                    //else
+                    //{
+                    //    lblMensaje.Text = "Su Registro ha sido exitoso";
+                    //    Limpiar();
+                    //}
                 }
             }
             catch (Exception ex)

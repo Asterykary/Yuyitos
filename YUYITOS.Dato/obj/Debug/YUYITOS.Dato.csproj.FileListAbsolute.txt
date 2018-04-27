@@ -14,3 +14,14 @@ C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Dato\bin\
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.csprojResolveAssemblyReference.cache
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.dll
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.csprojResolveAssemblyReference.cache
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.pdb
+D:\Yuyitos\YUYITOS.Dato\bin\Debug\YUYITOS.Dato.dll.config
+D:\Yuyitos\YUYITOS.Dato\bin\Debug\YUYITOS.Dato.dll
+D:\Yuyitos\YUYITOS.Dato\bin\Debug\YUYITOS.Dato.pdb
+D:\Yuyitos\YUYITOS.Dato\bin\Debug\EntityFramework.dll
+D:\Yuyitos\YUYITOS.Dato\bin\Debug\EntityFramework.xml
+D:\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.csprojResolveAssemblyReference.cache
+D:\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.dll
+D:\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.pdb

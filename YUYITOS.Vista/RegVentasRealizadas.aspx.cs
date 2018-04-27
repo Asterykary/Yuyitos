@@ -23,24 +23,24 @@ namespace YUYITOS.Vista
             tablaProductos.Visible = true;
             foreach (var prod in col.carritoVenta)
             {
-                TableRow fila = new TableRow();
-                TableCell item = new TableCell();
-                item.Text = i.ToString();
-                fila.Cells.Add(item);
-                TableCell descripcion = new TableCell();
-                descripcion.Text = prod.Descripcion;
-                fila.Cells.Add(descripcion);
-                TableCell cantidad = new TableCell();
-                cantidad.Text = prod.Cantidad.ToString();
-                fila.Cells.Add(cantidad);
-                TableCell valorUnitario = new TableCell();
-                valorUnitario.Text = "$ " + prod.Precio.ToString("0,0");
-                fila.Cells.Add(valorUnitario);
-                TableCell valorTotal = new TableCell();
-                string total = (prod.Precio * prod.Cantidad).ToString();
-                valorTotal.Text = "$ " + int.Parse(total).ToString("0,0");
-                fila.Cells.Add(valorTotal);
-                tablaProductos.Rows.Add(fila);
+                //TableRow fila = new TableRow();
+                //TableCell item = new TableCell();
+                //item.Text = i.ToString();
+                //fila.Cells.Add(item);
+                //TableCell descripcion = new TableCell();
+                //descripcion.Text = prod.Descripcion;
+                //fila.Cells.Add(descripcion);
+                //TableCell cantidad = new TableCell();
+                //cantidad.Text = prod.Cantidad.ToString();
+                //fila.Cells.Add(cantidad);
+                //TableCell valorUnitario = new TableCell();
+                //valorUnitario.Text = "$ " + prod.Precio.ToString("0,0");
+                //fila.Cells.Add(valorUnitario);
+                //TableCell valorTotal = new TableCell();
+                //string total = (prod.Precio * prod.Cantidad).ToString();
+                //valorTotal.Text = "$ " + int.Parse(total).ToString("0,0");
+                //fila.Cells.Add(valorTotal);
+                //tablaProductos.Rows.Add(fila);
             }
         }
 
@@ -51,13 +51,13 @@ namespace YUYITOS.Vista
             {
                 stock.CANT_DETALLE_STOCK = int.Parse(txtCantidad.Text);
                 detalleStock.Add(stock);
-                var producto = col.ListadoProductos().First(p => p.Id_producto == stock.PRODUCTO_ID_PRODUCTO);
-                producto.Cantidad = int.Parse(txtCantidad.Text);
-                col.carritoVenta.Add(producto);
-                txtCantidad.Text = string.Empty;
-                txtCodProducto.Text = string.Empty;
-                mostrarCarrito();
-                lblErrorCantidad.Text = "";
+                //var producto = col.ListadoProductos().First(p => p.Id_producto == stock.PRODUCTO_ID_PRODUCTO);
+                //producto.Cantidad = int.Parse(txtCantidad.Text);
+                //col.carritoVenta.Add(producto);
+                //txtCantidad.Text = string.Empty;
+                //txtCodProducto.Text = string.Empty;
+                //mostrarCarrito();
+                //lblErrorCantidad.Text = "";
             }
             else
             {
@@ -75,7 +75,7 @@ namespace YUYITOS.Vista
                 sd.ID_DETALLE_STOCK = stDetalle.ID_DETALLE_STOCK;
                 sd.CANT_DETALLE_STOCK = col.ListadoDetalleStock().First(d=>d.ID_DETALLE_STOCK == stDetalle.ID_DETALLE_STOCK).CANT_DETALLE_STOCK - stDetalle.CANT_DETALLE_STOCK;
                 sd.CODIGO_BARRA = stDetalle.CODIGO_BARRA;
-                sd.PRODUCTO_ID_PRODUCTO = stDetalle.PRODUCTO_ID_PRODUCTO;
+                //sd.PRODUCTO_ID_PRODUCTO = stDetalle.PRODUCTO_ID_PRODUCTO;
                 sd.STOCK_ID_STOCK = stDetalle.STOCK_ID_STOCK;
                 if (sd.Update())
                 {

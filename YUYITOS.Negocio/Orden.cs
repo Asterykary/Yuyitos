@@ -9,9 +9,8 @@ namespace YUYITOS.Negocio
     public class Orden
     {
         public decimal ID_ORDEN { get; set; }
-        public decimal ID_USUARIO { get; set; }
         public System.DateTime CREADO_EN { get; set; }
-        public decimal PROVEEDOR_ID_PROVEEDOR { get; set; }
+        public decimal PROVEEDOR_ID { get; set; }
         public short ESTADO_ORDEN { get; set; }
 
         public Orden()
@@ -42,9 +41,8 @@ namespace YUYITOS.Negocio
                 Dato.ORDEN unaOrden = new Dato.ORDEN()
                 {
                     ID_ORDEN = ID_ORDEN,
-                    ID_USUARIO = ID_USUARIO,
                     CREADO_EN = CREADO_EN,
-                    PROVEEDOR_ID_PROVEEDOR = PROVEEDOR_ID_PROVEEDOR,
+                    PROVEEDOR_ID = PROVEEDOR_ID,
                     ESTADO_ORDEN = ESTADO_ORDEN
 
 
@@ -65,9 +63,8 @@ namespace YUYITOS.Negocio
             {
                 Dato.ORDEN unaOrden = Conexion.YuyitosDB.ORDEN.First(em => em.ID_ORDEN == ID_ORDEN);
                 ID_ORDEN = unaOrden.ID_ORDEN;
-                ID_USUARIO = unaOrden.ID_USUARIO;
                 CREADO_EN = unaOrden.CREADO_EN;
-                PROVEEDOR_ID_PROVEEDOR = unaOrden.PROVEEDOR_ID_PROVEEDOR;
+                PROVEEDOR_ID = unaOrden.PROVEEDOR_ID;
                 ESTADO_ORDEN = unaOrden.ESTADO_ORDEN;
 
 
@@ -84,10 +81,9 @@ namespace YUYITOS.Negocio
             try
             {
                 Dato.ORDEN unaOrden = Conexion.YuyitosDB.ORDEN.First(em => em.ID_ORDEN == ID_ORDEN);
-                unaOrden.ID_USUARIO = ID_USUARIO;
                 unaOrden.ID_ORDEN = ID_ORDEN;
                 unaOrden.CREADO_EN = CREADO_EN;
-                unaOrden.PROVEEDOR_ID_PROVEEDOR = PROVEEDOR_ID_PROVEEDOR;
+                unaOrden.PROVEEDOR_ID = PROVEEDOR_ID;
                 unaOrden.ESTADO_ORDEN = ESTADO_ORDEN;
                 Conexion.YuyitosDB.SaveChanges();
                 return true;

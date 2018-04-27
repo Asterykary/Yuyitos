@@ -17,21 +17,22 @@ namespace YUYITOS.Dato
         public PROVEEDOR()
         {
             this.ORDEN = new HashSet<ORDEN>();
+            this.PRODUCTO_PROVEEDOR = new HashSet<PRODUCTO_PROVEEDOR>();
             this.RECEPCION = new HashSet<RECEPCION>();
-            this.STOCK = new HashSet<STOCK>();
         }
     
         public decimal ID_PROVEEDOR { get; set; }
         public string NOMBRE { get; set; }
         public int RUT { get; set; }
         public string DV { get; set; }
+        public string EMAIL { get; set; }
         public int TELEFONO { get; set; }
         public string RUBRO { get; set; }
-        public int CIUDAD_ID_CIUDAD { get; set; }
+        public int CIUDAD_ID { get; set; }
     
         public virtual CIUDAD CIUDAD { get; set; }
         public virtual ICollection<ORDEN> ORDEN { get; set; }
+        public virtual ICollection<PRODUCTO_PROVEEDOR> PRODUCTO_PROVEEDOR { get; set; }
         public virtual ICollection<RECEPCION> RECEPCION { get; set; }
-        public virtual ICollection<STOCK> STOCK { get; set; }
     }
 }

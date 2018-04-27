@@ -14,15 +14,18 @@ namespace YUYITOS.Dato
     
     public partial class RECEPCION
     {
+        public RECEPCION()
+        {
+            this.DETALLE_RECEPCION = new HashSet<DETALLE_RECEPCION>();
+        }
+    
         public int ID_RECEPCION { get; set; }
         public System.DateTime FECHA { get; set; }
-        public decimal STOCK_ID_STOCK { get; set; }
-        public decimal PROVEEDOR_ID_PROVEEDOR { get; set; }
+        public decimal PROVEEDOR_ID { get; set; }
         public decimal ORDEN_ID_ORDEN { get; set; }
-        public int DETALLE_RECEP_ID_D_RECEP { get; set; }
     
+        public virtual ICollection<DETALLE_RECEPCION> DETALLE_RECEPCION { get; set; }
         public virtual ORDEN ORDEN { get; set; }
         public virtual PROVEEDOR PROVEEDOR { get; set; }
-        public virtual STOCK STOCK { get; set; }
     }
 }

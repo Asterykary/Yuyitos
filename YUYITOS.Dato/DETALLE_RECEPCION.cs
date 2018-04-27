@@ -16,11 +16,10 @@ namespace YUYITOS.Dato
     {
         public int ID_DETALLE_RECEPCION { get; set; }
         public int CANT_DETALLE_RECEP { get; set; }
-        public int RECEPCION_ID_RECEPCION { get; set; }
-        public int PRODUCTO_ID_PRODUCTO { get; set; }
         public decimal STOCK_ID_STOCK { get; set; }
+        public int RECEPCION_ID { get; set; }
     
-        public virtual PRODUCTO PRODUCTO { get; set; }
+        public virtual RECEPCION RECEPCION { get; set; }
         public virtual STOCK STOCK { get; set; }
     }
 }

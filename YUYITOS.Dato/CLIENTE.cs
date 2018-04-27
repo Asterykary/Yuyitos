@@ -20,8 +20,10 @@ namespace YUYITOS.Dato
             this.CLIENTE_FIADO = new HashSet<CLIENTE_FIADO>();
         }
     
-        public int ID_CLIENTE { get; set; }
+        public int RUT_CLIENTE { get; set; }
         public string NOMBRE { get; set; }
+        public string DV { get; set; }
+        public string APELLIDOS { get; set; }
     
         public virtual ICollection<BOLETA> BOLETA { get; set; }
         public virtual ICollection<CLIENTE_FIADO> CLIENTE_FIADO { get; set; }

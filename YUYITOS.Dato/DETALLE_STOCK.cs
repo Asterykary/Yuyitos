@@ -14,13 +14,19 @@ namespace YUYITOS.Dato
     
     public partial class DETALLE_STOCK
     {
+        public DETALLE_STOCK()
+        {
+            this.DETALLE_BOLETA = new HashSet<DETALLE_BOLETA>();
+        }
+    
         public int ID_DETALLE_STOCK { get; set; }
         public int CANT_DETALLE_STOCK { get; set; }
         public int CODIGO_BARRA { get; set; }
-        public int PRODUCTO_ID_PRODUCTO { get; set; }
         public decimal STOCK_ID_STOCK { get; set; }
+        public int PRODUCTO_PROVEEDOR_ID { get; set; }
     
-        public virtual PRODUCTO PRODUCTO { get; set; }
+        public virtual ICollection<DETALLE_BOLETA> DETALLE_BOLETA { get; set; }
+        public virtual PRODUCTO_PROVEEDOR PRODUCTO_PROVEEDOR { get; set; }
         public virtual STOCK STOCK { get; set; }
     }
 }

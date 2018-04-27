@@ -10,9 +10,7 @@ namespace YUYITOS.Negocio
     {
         public decimal ID_STOCK { get; set; }
         public System.DateTime FECHA_VENCIMIENTO { get; set; }
-        public decimal CODIGO_BARRA { get; set; }
-        public int PRODUCTO_ID_PRODUCTO { get; set; }
-        public decimal PROVEEDOR_ID_PROVEEDOR { get; set; }
+        
 
         public Stock()
         {
@@ -42,10 +40,8 @@ namespace YUYITOS.Negocio
                 Dato.STOCK unStock = new Dato.STOCK()
                 {
                     ID_STOCK = ID_STOCK,
-                    FECHA_VENCIMIENTO = FECHA_VENCIMIENTO,
-                    CODIGO_BARRA = CODIGO_BARRA,
-                    PRODUCTO_ID_PRODUCTO = PRODUCTO_ID_PRODUCTO,
-                    PROVEEDOR_ID_PROVEEDOR = PROVEEDOR_ID_PROVEEDOR
+                    FECHA_VENCIMIENTO = FECHA_VENCIMIENTO
+                    
                 };
                 Conexion.YuyitosDB.STOCK.Add(unStock);
                 Conexion.YuyitosDB.SaveChanges();
@@ -64,10 +60,7 @@ namespace YUYITOS.Negocio
                 Dato.STOCK unStock = Conexion.YuyitosDB.STOCK.First(em => em.ID_STOCK == ID_STOCK);
                 ID_STOCK = unStock.ID_STOCK;
                 FECHA_VENCIMIENTO = unStock.FECHA_VENCIMIENTO;
-                CODIGO_BARRA = unStock.CODIGO_BARRA;
-                PROVEEDOR_ID_PROVEEDOR = unStock.PROVEEDOR_ID_PROVEEDOR;
-                PRODUCTO_ID_PRODUCTO = unStock.PRODUCTO_ID_PRODUCTO;
-
+                
                 return true;
             }
             catch (Exception)
@@ -83,9 +76,6 @@ namespace YUYITOS.Negocio
                 Dato.STOCK unStock = Conexion.YuyitosDB.STOCK.First(em => em.ID_STOCK == ID_STOCK);
                 unStock.ID_STOCK = ID_STOCK;
                 unStock.FECHA_VENCIMIENTO = FECHA_VENCIMIENTO;
-                unStock.CODIGO_BARRA = CODIGO_BARRA;
-                unStock.PROVEEDOR_ID_PROVEEDOR = PROVEEDOR_ID_PROVEEDOR;
-                unStock.PRODUCTO_ID_PRODUCTO = PRODUCTO_ID_PRODUCTO;
                 Conexion.YuyitosDB.SaveChanges();
                 return true;
             }

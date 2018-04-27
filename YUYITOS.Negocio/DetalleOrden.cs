@@ -10,7 +10,7 @@ namespace YUYITOS.Negocio
     {
         public int ID_DETALLE_ORDEN { get; set; }
         public string DESCRIPCION { get; set; }
-        public int ORDEN_ID_ORDEN { get; set; }
+        public int ORDEN_ID { get; set; }
         private int _CANT_DETALLE_O;
 
         public int CANT_DETALLE_O
@@ -24,7 +24,8 @@ namespace YUYITOS.Negocio
             }
         }
 
-        public int PRODUCTO_ID_PRODUCTO { get; set; }
+        public string ESTADO_DET_ORDEN { get; set; }
+        public int PRODUCTO_PROVEEDOR_ID { get; set; }
 
 
         public DetalleOrden()
@@ -55,9 +56,10 @@ namespace YUYITOS.Negocio
                 {
                     ID_DETALLE_ORDEN = ID_DETALLE_ORDEN,
                     DESCRIPCION = DESCRIPCION,
-                    ORDEN_ID_ORDEN = ORDEN_ID_ORDEN,
+                    ORDEN_ID = ORDEN_ID,
                     CANT_DETALLE_O = CANT_DETALLE_O,
-                    PRODUCTO_ID_PRODUCTO = PRODUCTO_ID_PRODUCTO
+                    ESTADO_DET_ORDEN = ESTADO_DET_ORDEN,
+                    PRODUCTO_PROVEEDOR_ID = PRODUCTO_PROVEEDOR_ID
 
 
                 };
@@ -78,9 +80,10 @@ namespace YUYITOS.Negocio
                 Dato.DETALLE_ORDEN unDetalleOrden = Conexion.YuyitosDB.DETALLE_ORDEN.First(em => em.ID_DETALLE_ORDEN == ID_DETALLE_ORDEN);
                 ID_DETALLE_ORDEN = unDetalleOrden.ID_DETALLE_ORDEN;
                 DESCRIPCION = unDetalleOrden.DESCRIPCION;
-                ORDEN_ID_ORDEN = (int)unDetalleOrden.ORDEN_ID_ORDEN;
+                ORDEN_ID = (int)unDetalleOrden.ORDEN_ID;
                 CANT_DETALLE_O = unDetalleOrden.CANT_DETALLE_O;
-                PRODUCTO_ID_PRODUCTO = unDetalleOrden.PRODUCTO_ID_PRODUCTO;
+                ESTADO_DET_ORDEN = unDetalleOrden.ESTADO_DET_ORDEN;
+                PRODUCTO_PROVEEDOR_ID = unDetalleOrden.PRODUCTO_PROVEEDOR_ID;
 
                 return true;
             }
@@ -97,9 +100,10 @@ namespace YUYITOS.Negocio
                 Dato.DETALLE_ORDEN unDetalleOrden = Conexion.YuyitosDB.DETALLE_ORDEN.First(em => em.ID_DETALLE_ORDEN == ID_DETALLE_ORDEN);
                 unDetalleOrden.ID_DETALLE_ORDEN = ID_DETALLE_ORDEN;
                 unDetalleOrden.DESCRIPCION = DESCRIPCION;
-                unDetalleOrden.ORDEN_ID_ORDEN = (decimal)ORDEN_ID_ORDEN;
+                unDetalleOrden.ORDEN_ID = (decimal)ORDEN_ID;
                 unDetalleOrden.CANT_DETALLE_O = CANT_DETALLE_O;
-                unDetalleOrden.PRODUCTO_ID_PRODUCTO = PRODUCTO_ID_PRODUCTO;
+                unDetalleOrden.ESTADO_DET_ORDEN = ESTADO_DET_ORDEN;
+                unDetalleOrden.PRODUCTO_PROVEEDOR_ID = PRODUCTO_PROVEEDOR_ID;
                 Conexion.YuyitosDB.SaveChanges();
                 return true;
             }

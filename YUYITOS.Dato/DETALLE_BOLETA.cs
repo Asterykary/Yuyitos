@@ -15,10 +15,10 @@ namespace YUYITOS.Dato
     public partial class DETALLE_BOLETA
     {
         public int ID_DETALLE_BOLETA { get; set; }
-        public int BOLETA_ID_BOLETA { get; set; }
-        public int PRODUCTO_ID_PRODUCTO { get; set; }
+        public int BOLETA_ID { get; set; }
+        public int DETALLE_STOCK_ID { get; set; }
     
         public virtual BOLETA BOLETA { get; set; }
-        public virtual PRODUCTO PRODUCTO { get; set; }
+        public virtual DETALLE_STOCK DETALLE_STOCK { get; set; }
     }
 }

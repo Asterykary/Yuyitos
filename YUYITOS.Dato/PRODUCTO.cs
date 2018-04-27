@@ -16,29 +16,19 @@ namespace YUYITOS.Dato
     {
         public PRODUCTO()
         {
-            this.DETALLE_BOLETA = new HashSet<DETALLE_BOLETA>();
-            this.DETALLE_ORDEN = new HashSet<DETALLE_ORDEN>();
-            this.DETALLE_RECEPCION = new HashSet<DETALLE_RECEPCION>();
-            this.DETALLE_STOCK = new HashSet<DETALLE_STOCK>();
-            this.STOCK = new HashSet<STOCK>();
-            this.DETALLE_ORDEN1 = new HashSet<DETALLE_ORDEN>();
+            this.PRODUCTO_PROVEEDOR = new HashSet<PRODUCTO_PROVEEDOR>();
         }
     
         public int ID_PRODUCTO { get; set; }
         public string DESCRIPCION { get; set; }
-        public decimal PRECIO { get; set; }
-        public decimal TIPO_PRODUCTO_ID_TIPO_PRODUCTO { get; set; }
-        public decimal FAMILIA_ID_FAMILIA { get; set; }
-        public Nullable<decimal> TIPO_ALIMENTO_ID_TIPO_ALIMENTO { get; set; }
+        public decimal PRECIO_COMPRA { get; set; }
+        public decimal TIPO_PRODUCTO_ID { get; set; }
+        public decimal FAMILIA_ID { get; set; }
+        public Nullable<decimal> TIPO_ALIMENTO_ID { get; set; }
     
-        public virtual ICollection<DETALLE_BOLETA> DETALLE_BOLETA { get; set; }
-        public virtual ICollection<DETALLE_ORDEN> DETALLE_ORDEN { get; set; }
-        public virtual ICollection<DETALLE_RECEPCION> DETALLE_RECEPCION { get; set; }
-        public virtual ICollection<DETALLE_STOCK> DETALLE_STOCK { get; set; }
         public virtual FAMILIA FAMILIA { get; set; }
+        public virtual ICollection<PRODUCTO_PROVEEDOR> PRODUCTO_PROVEEDOR { get; set; }
         public virtual TIPO_ALIMENTO TIPO_ALIMENTO { get; set; }
         public virtual TIPO_PRODUCTO TIPO_PRODUCTO { get; set; }
-        public virtual ICollection<STOCK> STOCK { get; set; }
-        public virtual ICollection<DETALLE_ORDEN> DETALLE_ORDEN1 { get; set; }
     }
 }

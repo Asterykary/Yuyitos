@@ -18,3 +18,23 @@ C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Negocio\b
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.csprojResolveAssemblyReference.cache
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.dll
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Negocio.dll.config
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Negocio.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Negocio.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\bin\Debug\EntityFramework.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Dato.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Dato.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\bin\Debug\EntityFramework.xml
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.pdb
+D:\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.csprojResolveAssemblyReference.cache
+D:\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.dll
+D:\Yuyitos\YUYITOS.Negocio\obj\Debug\YUYITOS.Negocio.pdb
+D:\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Negocio.dll.config
+D:\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Negocio.dll
+D:\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Negocio.pdb
+D:\Yuyitos\YUYITOS.Negocio\bin\Debug\EntityFramework.dll
+D:\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Dato.dll
+D:\Yuyitos\YUYITOS.Negocio\bin\Debug\YUYITOS.Dato.pdb
+D:\Yuyitos\YUYITOS.Negocio\bin\Debug\EntityFramework.xml
