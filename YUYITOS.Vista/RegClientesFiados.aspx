@@ -39,6 +39,7 @@
                     <input id="fecha" type="text" /></td>
             </tr>
         </table>
+        <h1>Prueba pull remote desde Carlos a Jorge</h1>
         <br />
         <input id="fiadoBtn" class="btn btn-primary" type="button" value="Registrar Fiado" /><br />
     

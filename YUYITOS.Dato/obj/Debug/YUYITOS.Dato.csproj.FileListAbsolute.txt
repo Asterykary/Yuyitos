@@ -25,3 +25,8 @@ D:\Yuyitos\YUYITOS.Dato\bin\Debug\EntityFramework.xml
 D:\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.csprojResolveAssemblyReference.cache
 D:\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.dll
 D:\Yuyitos\YUYITOS.Dato\obj\Debug\YUYITOS.Dato.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Dato\bin\Debug\YUYITOS.Dato.dll.config
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Dato\bin\Debug\YUYITOS.Dato.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Dato\bin\Debug\YUYITOS.Dato.pdb
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Dato\bin\Debug\EntityFramework.dll
+C:\Users\casto\Desktop\GitHub\Yuyitos\YUYITOS.Dato\bin\Debug\EntityFramework.xml
