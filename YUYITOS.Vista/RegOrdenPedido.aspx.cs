@@ -46,17 +46,17 @@ namespace YUYITOS.Vista
            
             foreach (Producto ent in con.ListadoProductos())
             {
-                DropDownList2.Items.Add(new ListItem() { Value = ent.Descripcion});
+                DropDownList2.Items.Add(new ListItem() { Value = ent.DESCRIPCION});
             }
             
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {   
-            var producto = (Producto)con.ListadoProductos().First(p => p.Descripcion == DropDownList2.SelectedItem.Text);
+            var producto = (Producto)con.ListadoProductos().First(p => p.DESCRIPCION == DropDownList2.SelectedItem.Text);
             try
             {
-                producto.Cantidad = int.Parse(txtCantidad.Text);
+                //producto.Cantidad = int.Parse(txtCantidad.Text);
             }
             catch(FormatException fe )
             {
@@ -90,21 +90,21 @@ namespace YUYITOS.Vista
                 item.Text = i.ToString();
                 fila.Cells.Add(item);
                 TableCell descripcion = new TableCell();
-                descripcion.Text = prod.Descripcion;
+                //descripcion.Text = prod.Descripcion;
                 fila.Cells.Add(descripcion);
                 TableCell cantidad = new TableCell();
-                cantidad.Text = prod.Cantidad.ToString();
+                //cantidad.Text = prod.Cantidad.ToString();
                 fila.Cells.Add(cantidad);
                 TableCell valorUnitario = new TableCell();
-                valorUnitario.Text = "$ " + prod.Precio.ToString("0,0");
+                //valorUnitario.Text = "$ " + prod.Precio.ToString("0,0");
                 fila.Cells.Add(valorUnitario);
                 TableCell valorTotal = new TableCell();
-                string total = (prod.Precio * prod.Cantidad).ToString();
-                valorTotal.Text = "$ " + int.Parse(total).ToString("0,0");
+                //string total = (prod.Precio * prod.Cantidad).ToString();
+                //valorTotal.Text = "$ " + int.Parse(total).ToString("0,0");
                 fila.Cells.Add(valorTotal);
                 tablaProductos.Rows.Add(fila);
                 i++;
-                neto += int.Parse(total);
+                //neto += int.Parse(total);
             }
             lblNeto.Text = " $ " + neto.ToString("0,0");
             lblIva.Text = " $ " + ((int)(neto * 0.19)).ToString("0,0");
@@ -121,10 +121,10 @@ namespace YUYITOS.Vista
         {
             Orden orden = new Orden();
             orden.ID_ORDEN = orden.getLastId() + 1;
-            orden.ID_USUARIO = 123456;
+            //orden.ID_USUARIO = 123456;
             orden.CREADO_EN = DateTime.Now;
             var proveedor = con.ListadoIdProveedor().First(p => p.NOMBRE == DropDownList1.SelectedItem.Text);
-            orden.PROVEEDOR_ID_PROVEEDOR = proveedor.ID_PROVEEDOR;
+            //orden.PROVEEDOR_ID_PROVEEDOR = proveedor.ID_PROVEEDOR;
             orden.ESTADO_ORDEN = 0;
             if (orden.Create()) //Se inserta la Orden en la base de datos
             {
@@ -132,10 +132,10 @@ namespace YUYITOS.Vista
                 {
                     DetalleOrden detalleOrden = new DetalleOrden();
                     detalleOrden.ID_DETALLE_ORDEN = detalleOrden.getLastId() + 1;
-                    detalleOrden.DESCRIPCION = producto.Descripcion;
-                    detalleOrden.ORDEN_ID_ORDEN = (int)orden.ID_ORDEN;
-                    detalleOrden.CANT_DETALLE_O = (int)producto.Cantidad;
-                    detalleOrden.PRODUCTO_ID_PRODUCTO = producto.Id_producto;
+                    //detalleOrden.DESCRIPCION = producto.Descripcion;
+                    //detalleOrden.ORDEN_ID_ORDEN = (int)orden.ID_ORDEN;
+                    //detalleOrden.CANT_DETALLE_O = (int)producto.Cantidad;
+                    //detalleOrden.PRODUCTO_ID_PRODUCTO = producto.Id_producto;
                     detalleOrden.Create(); // Se inserta cada detalle en la base de datos
                 }
                 con.carrito = new List<Producto>();

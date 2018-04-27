@@ -18,9 +18,9 @@ namespace YUYITOS.Negocio
             {
                 salida.Add(new Producto()
                 {
-                    Id_producto = unProducto.ID_PRODUCTO,
-                    Descripcion = unProducto.DESCRIPCION,
-                    Precio = (int)unProducto.PRECIO,
+                    ID_PRODUCTO = unProducto.ID_PRODUCTO,
+                    DESCRIPCION = unProducto.DESCRIPCION,
+                    PRECIO_COMPRA = (int)unProducto.PRECIO_COMPRA,
                 });
             }
             return salida;
@@ -33,7 +33,7 @@ namespace YUYITOS.Negocio
             {
                 salida.Add(new Proveedor()
                 {
-                    ID_PROVEEDOR = unProveedor.ID_PROVEEDOR,
+                    ID_PROVEEDOR = (int)unProveedor.ID_PROVEEDOR,
                     NOMBRE = unProveedor.NOMBRE
                 });
             }
@@ -74,10 +74,7 @@ namespace YUYITOS.Negocio
                 salida.Add(new Stock()
                 {
                     ID_STOCK = unStock.ID_STOCK,
-                    FECHA_VENCIMIENTO = unStock.FECHA_VENCIMIENTO,
-                    CODIGO_BARRA = unStock.CODIGO_BARRA,
-                    PRODUCTO_ID_PRODUCTO = unStock.PRODUCTO_ID_PRODUCTO,
-                    PROVEEDOR_ID_PROVEEDOR = unStock.PROVEEDOR_ID_PROVEEDOR
+                    FECHA_VENCIMIENTO = unStock.FECHA_VENCIMIENTO
                 });
             }
             return salida;
@@ -93,8 +90,8 @@ namespace YUYITOS.Negocio
                     ID_DETALLE_STOCK = unStock.ID_DETALLE_STOCK,
                     CANT_DETALLE_STOCK = unStock.CANT_DETALLE_STOCK,
                     CODIGO_BARRA = unStock.CODIGO_BARRA,
-                    PRODUCTO_ID_PRODUCTO = unStock.PRODUCTO_ID_PRODUCTO,
-                    STOCK_ID_STOCK = unStock.STOCK_ID_STOCK
+                    PRODUCTO_PROVEEDOR_ID = unStock.PRODUCTO_PROVEEDOR_ID,
+                    STOCK_ID_STOCK = (int)unStock.STOCK_ID_STOCK
                 });
             }
             return salida;

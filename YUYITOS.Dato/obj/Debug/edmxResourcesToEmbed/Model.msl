@@ -6,7 +6,7 @@
         <MappingFragment StoreEntitySet="ABONO_FIADO">
           <ScalarProperty Name="ID_ABONO" ColumnName="ID_ABONO" />
           <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
-          <ScalarProperty Name="CLIENTE_FIADO_ID_CLIENTE_FIADO" ColumnName="CLIENTE_FIADO_ID_CLIENTE_FIADO" />
+          <ScalarProperty Name="CLIENTE_FIADO_ID" ColumnName="CLIENTE_FIADO_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -14,8 +14,8 @@
       <EntityTypeMapping TypeName="Model.BOLETA">
         <MappingFragment StoreEntitySet="BOLETA">
           <ScalarProperty Name="ID_BOLETA" ColumnName="ID_BOLETA" />
-          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
-          <ScalarProperty Name="CLIENTE_ID_CLIENTE" ColumnName="CLIENTE_ID_CLIENTE" />
+          <ScalarProperty Name="TOTAL_NETO" ColumnName="TOTAL_NETO" />
+          <ScalarProperty Name="CLIENTE_RUT" ColumnName="CLIENTE_RUT" />
           <ScalarProperty Name="FECHA_BOLETA" ColumnName="FECHA_BOLETA" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -31,8 +31,10 @@
     <EntitySetMapping Name="CLIENTE">
       <EntityTypeMapping TypeName="Model.CLIENTE">
         <MappingFragment StoreEntitySet="CLIENTE">
-          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="RUT_CLIENTE" ColumnName="RUT_CLIENTE" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DV" ColumnName="DV" />
+          <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -40,9 +42,8 @@
       <EntityTypeMapping TypeName="Model.CLIENTE_FIADO">
         <MappingFragment StoreEntitySet="CLIENTE_FIADO">
           <ScalarProperty Name="ID_CLIENTE_FIADO" ColumnName="ID_CLIENTE_FIADO" />
-          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
           <ScalarProperty Name="FECHA_CONVENIDA" ColumnName="FECHA_CONVENIDA" />
-          <ScalarProperty Name="CLIENTE_ID_CLIENTE" ColumnName="CLIENTE_ID_CLIENTE" />
+          <ScalarProperty Name="CLIENTE_RUT" ColumnName="CLIENTE_RUT" />
           <ScalarProperty Name="MONTO_TOTAL" ColumnName="MONTO_TOTAL" />
           <ScalarProperty Name="MONTO_PAGADO" ColumnName="MONTO_PAGADO" />
           <ScalarProperty Name="MONTO_ADEUDADO" ColumnName="MONTO_ADEUDADO" />
@@ -54,8 +55,8 @@
       <EntityTypeMapping TypeName="Model.DETALLE_BOLETA">
         <MappingFragment StoreEntitySet="DETALLE_BOLETA">
           <ScalarProperty Name="ID_DETALLE_BOLETA" ColumnName="ID_DETALLE_BOLETA" />
-          <ScalarProperty Name="BOLETA_ID_BOLETA" ColumnName="BOLETA_ID_BOLETA" />
-          <ScalarProperty Name="PRODUCTO_ID_PRODUCTO" ColumnName="PRODUCTO_ID_PRODUCTO" />
+          <ScalarProperty Name="BOLETA_ID" ColumnName="BOLETA_ID" />
+          <ScalarProperty Name="DETALLE_STOCK_ID" ColumnName="DETALLE_STOCK_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -64,9 +65,10 @@
         <MappingFragment StoreEntitySet="DETALLE_ORDEN">
           <ScalarProperty Name="ID_DETALLE_ORDEN" ColumnName="ID_DETALLE_ORDEN" />
           <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-          <ScalarProperty Name="ORDEN_ID_ORDEN" ColumnName="ORDEN_ID_ORDEN" />
+          <ScalarProperty Name="ORDEN_ID" ColumnName="ORDEN_ID" />
           <ScalarProperty Name="CANT_DETALLE_O" ColumnName="CANT_DETALLE_O" />
-          <ScalarProperty Name="PRODUCTO_ID_PRODUCTO" ColumnName="PRODUCTO_ID_PRODUCTO" />
+          <ScalarProperty Name="ESTADO_DET_ORDEN" ColumnName="ESTADO_DET_ORDEN" />
+          <ScalarProperty Name="PRODUCTO_PROVEEDOR_ID" ColumnName="PRODUCTO_PROVEEDOR_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -75,9 +77,8 @@
         <MappingFragment StoreEntitySet="DETALLE_RECEPCION">
           <ScalarProperty Name="ID_DETALLE_RECEPCION" ColumnName="ID_DETALLE_RECEPCION" />
           <ScalarProperty Name="CANT_DETALLE_RECEP" ColumnName="CANT_DETALLE_RECEP" />
-          <ScalarProperty Name="RECEPCION_ID_RECEPCION" ColumnName="RECEPCION_ID_RECEPCION" />
-          <ScalarProperty Name="PRODUCTO_ID_PRODUCTO" ColumnName="PRODUCTO_ID_PRODUCTO" />
           <ScalarProperty Name="STOCK_ID_STOCK" ColumnName="STOCK_ID_STOCK" />
+          <ScalarProperty Name="RECEPCION_ID" ColumnName="RECEPCION_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -87,8 +88,8 @@
           <ScalarProperty Name="ID_DETALLE_STOCK" ColumnName="ID_DETALLE_STOCK" />
           <ScalarProperty Name="CANT_DETALLE_STOCK" ColumnName="CANT_DETALLE_STOCK" />
           <ScalarProperty Name="CODIGO_BARRA" ColumnName="CODIGO_BARRA" />
-          <ScalarProperty Name="PRODUCTO_ID_PRODUCTO" ColumnName="PRODUCTO_ID_PRODUCTO" />
           <ScalarProperty Name="STOCK_ID_STOCK" ColumnName="STOCK_ID_STOCK" />
+          <ScalarProperty Name="PRODUCTO_PROVEEDOR_ID" ColumnName="PRODUCTO_PROVEEDOR_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -104,9 +105,8 @@
       <EntityTypeMapping TypeName="Model.ORDEN">
         <MappingFragment StoreEntitySet="ORDEN">
           <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
-          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
           <ScalarProperty Name="CREADO_EN" ColumnName="CREADO_EN" />
-          <ScalarProperty Name="PROVEEDOR_ID_PROVEEDOR" ColumnName="PROVEEDOR_ID_PROVEEDOR" />
+          <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
           <ScalarProperty Name="ESTADO_ORDEN" ColumnName="ESTADO_ORDEN" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -116,10 +116,20 @@
         <MappingFragment StoreEntitySet="PRODUCTO">
           <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
           <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
-          <ScalarProperty Name="TIPO_PRODUCTO_ID_TIPO_PRODUCTO" ColumnName="TIPO_PRODUCTO_ID_TIPO_PRODUCTO" />
-          <ScalarProperty Name="FAMILIA_ID_FAMILIA" ColumnName="FAMILIA_ID_FAMILIA" />
-          <ScalarProperty Name="TIPO_ALIMENTO_ID_TIPO_ALIMENTO" ColumnName="TIPO_ALIMENTO_ID_TIPO_ALIMENTO" />
+          <ScalarProperty Name="PRECIO_COMPRA" ColumnName="PRECIO_COMPRA" />
+          <ScalarProperty Name="TIPO_PRODUCTO_ID" ColumnName="TIPO_PRODUCTO_ID" />
+          <ScalarProperty Name="FAMILIA_ID" ColumnName="FAMILIA_ID" />
+          <ScalarProperty Name="TIPO_ALIMENTO_ID" ColumnName="TIPO_ALIMENTO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO_PROVEEDOR">
+      <EntityTypeMapping TypeName="Model.PRODUCTO_PROVEEDOR">
+        <MappingFragment StoreEntitySet="PRODUCTO_PROVEEDOR">
+          <ScalarProperty Name="ID_PRODUCTO_P" ColumnName="ID_PRODUCTO_P" />
+          <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
+          <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
+          <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -130,9 +140,10 @@
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="RUT" ColumnName="RUT" />
           <ScalarProperty Name="DV" ColumnName="DV" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
           <ScalarProperty Name="RUBRO" ColumnName="RUBRO" />
-          <ScalarProperty Name="CIUDAD_ID_CIUDAD" ColumnName="CIUDAD_ID_CIUDAD" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -141,10 +152,8 @@
         <MappingFragment StoreEntitySet="RECEPCION">
           <ScalarProperty Name="ID_RECEPCION" ColumnName="ID_RECEPCION" />
           <ScalarProperty Name="FECHA" ColumnName="FECHA" />
-          <ScalarProperty Name="STOCK_ID_STOCK" ColumnName="STOCK_ID_STOCK" />
-          <ScalarProperty Name="PROVEEDOR_ID_PROVEEDOR" ColumnName="PROVEEDOR_ID_PROVEEDOR" />
+          <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
           <ScalarProperty Name="ORDEN_ID_ORDEN" ColumnName="ORDEN_ID_ORDEN" />
-          <ScalarProperty Name="DETALLE_RECEP_ID_D_RECEP" ColumnName="DETALLE_RECEP_ID_D_RECEP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -153,9 +162,6 @@
         <MappingFragment StoreEntitySet="STOCK">
           <ScalarProperty Name="ID_STOCK" ColumnName="ID_STOCK" />
           <ScalarProperty Name="FECHA_VENCIMIENTO" ColumnName="FECHA_VENCIMIENTO" />
-          <ScalarProperty Name="CODIGO_BARRA" ColumnName="CODIGO_BARRA" />
-          <ScalarProperty Name="PRODUCTO_ID_PRODUCTO" ColumnName="PRODUCTO_ID_PRODUCTO" />
-          <ScalarProperty Name="PROVEEDOR_ID_PROVEEDOR" ColumnName="PROVEEDOR_ID_PROVEEDOR" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -190,17 +196,9 @@
           <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
           <ScalarProperty Name="CONTRASENHA" ColumnName="CONTRASENHA" />
           <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
-          <ScalarProperty Name="TIPO_USUARIO_ID_TIPO_USUARIO" ColumnName="TIPO_USUARIO_ID_TIPO_USUARIO" />
+          <ScalarProperty Name="TIPO_USUARIO_ID" ColumnName="TIPO_USUARIO_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="DETALLE_ORDEN_PRODUCTO" TypeName="Model.DETALLE_ORDEN_PRODUCTO" StoreEntitySet="DETALLE_ORDEN_PRODUCTO">
-      <EndProperty Name="DETALLE_ORDEN">
-        <ScalarProperty Name="ID_DETALLE_ORDEN" ColumnName="DETALLE_ORDEN_ID_DETALLE_ORDEN" />
-      </EndProperty>
-      <EndProperty Name="PRODUCTO">
-        <ScalarProperty Name="ID_PRODUCTO" ColumnName="PRODUCTO_ID_PRODUCTO" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

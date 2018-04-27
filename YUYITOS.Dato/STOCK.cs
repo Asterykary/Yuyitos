@@ -18,19 +18,12 @@ namespace YUYITOS.Dato
         {
             this.DETALLE_RECEPCION = new HashSet<DETALLE_RECEPCION>();
             this.DETALLE_STOCK = new HashSet<DETALLE_STOCK>();
-            this.RECEPCION = new HashSet<RECEPCION>();
         }
     
         public decimal ID_STOCK { get; set; }
         public System.DateTime FECHA_VENCIMIENTO { get; set; }
-        public decimal CODIGO_BARRA { get; set; }
-        public int PRODUCTO_ID_PRODUCTO { get; set; }
-        public decimal PROVEEDOR_ID_PROVEEDOR { get; set; }
     
         public virtual ICollection<DETALLE_RECEPCION> DETALLE_RECEPCION { get; set; }
         public virtual ICollection<DETALLE_STOCK> DETALLE_STOCK { get; set; }
-        public virtual PRODUCTO PRODUCTO { get; set; }
-        public virtual PROVEEDOR PROVEEDOR { get; set; }
-        public virtual ICollection<RECEPCION> RECEPCION { get; set; }
     }
 }

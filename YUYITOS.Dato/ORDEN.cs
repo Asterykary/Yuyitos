@@ -21,9 +21,8 @@ namespace YUYITOS.Dato
         }
     
         public decimal ID_ORDEN { get; set; }
-        public decimal ID_USUARIO { get; set; }
         public System.DateTime CREADO_EN { get; set; }
-        public decimal PROVEEDOR_ID_PROVEEDOR { get; set; }
+        public decimal PROVEEDOR_ID { get; set; }
         public short ESTADO_ORDEN { get; set; }
     
         public virtual ICollection<DETALLE_ORDEN> DETALLE_ORDEN { get; set; }

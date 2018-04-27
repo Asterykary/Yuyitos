@@ -15,12 +15,12 @@ namespace YUYITOS.Test
             //declaro el objeto
             Producto buscar = new Producto()
             {
-                Id_producto = 1
+                ID_PRODUCTO = 1
             };
 
             buscar.Read();
 
-            resultado = buscar.Descripcion;
+            resultado = buscar.DESCRIPCION;
             
             Assert.AreEqual(esperado, resultado);
 

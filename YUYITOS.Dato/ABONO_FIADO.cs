@@ -16,7 +16,7 @@ namespace YUYITOS.Dato
     {
         public int ID_ABONO { get; set; }
         public int CANTIDAD { get; set; }
-        public decimal CLIENTE_FIADO_ID_CLIENTE_FIADO { get; set; }
+        public decimal CLIENTE_FIADO_ID { get; set; }
     
         public virtual CLIENTE_FIADO CLIENTE_FIADO { get; set; }
     }

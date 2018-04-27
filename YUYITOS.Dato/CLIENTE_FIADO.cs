@@ -20,9 +20,8 @@ namespace YUYITOS.Dato
         }
     
         public decimal ID_CLIENTE_FIADO { get; set; }
-        public string ESTADO { get; set; }
         public System.DateTime FECHA_CONVENIDA { get; set; }
-        public int CLIENTE_ID_CLIENTE { get; set; }
+        public int CLIENTE_RUT { get; set; }
         public int MONTO_TOTAL { get; set; }
         public int MONTO_PAGADO { get; set; }
         public int MONTO_ADEUDADO { get; set; }

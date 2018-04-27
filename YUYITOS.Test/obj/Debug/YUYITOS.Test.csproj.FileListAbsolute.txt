@@ -26,3 +26,17 @@ C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Test\bin\
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.csprojResolveAssemblyReference.cache
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.dll
 C:\Users\Karina\Desktop\Portafolio Yuyitos\ProyectoNew\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.pdb
+D:\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.csprojResolveAssemblyReference.cache
+D:\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.dll
+D:\Yuyitos\YUYITOS.Test\obj\Debug\YUYITOS.Test.pdb
+D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Test.dll.config
+D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Test.dll
+D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Test.pdb
+D:\Yuyitos\YUYITOS.Test\bin\Debug\EntityFramework.dll
+D:\Yuyitos\YUYITOS.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Negocio.dll
+D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Dato.dll
+D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Negocio.pdb
+D:\Yuyitos\YUYITOS.Test\bin\Debug\EntityFramework.xml
+D:\Yuyitos\YUYITOS.Test\bin\Debug\YUYITOS.Dato.pdb
+D:\Yuyitos\YUYITOS.Test\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

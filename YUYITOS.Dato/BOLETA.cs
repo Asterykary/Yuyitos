@@ -20,8 +20,8 @@ namespace YUYITOS.Dato
         }
     
         public int ID_BOLETA { get; set; }
-        public int TOTAL { get; set; }
-        public int CLIENTE_ID_CLIENTE { get; set; }
+        public int TOTAL_NETO { get; set; }
+        public int CLIENTE_RUT { get; set; }
         public System.DateTime FECHA_BOLETA { get; set; }
     
         public virtual CLIENTE CLIENTE { get; set; }

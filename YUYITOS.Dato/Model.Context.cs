@@ -37,6 +37,7 @@ namespace YUYITOS.Dato
         public DbSet<FAMILIA> FAMILIA { get; set; }
         public DbSet<ORDEN> ORDEN { get; set; }
         public DbSet<PRODUCTO> PRODUCTO { get; set; }
+        public DbSet<PRODUCTO_PROVEEDOR> PRODUCTO_PROVEEDOR { get; set; }
         public DbSet<PROVEEDOR> PROVEEDOR { get; set; }
         public DbSet<RECEPCION> RECEPCION { get; set; }
         public DbSet<STOCK> STOCK { get; set; }

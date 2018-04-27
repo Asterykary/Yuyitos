@@ -8,14 +8,42 @@ namespace YUYITOS.Negocio
 {
     public class Proveedor
     {
-        public decimal ID_PROVEEDOR { get; set; }
+        public int ID_PROVEEDOR { get; set; }
         public string NOMBRE { get; set; }
-        public int RUT { get; set; }
-        public string DV { get; set; }
+        private int _rut;
+        private string _dv;
+
+        /// Rut con validación
+        public string Rut
+        {
+            get
+            {
+                return string.Format("{0}-{1}", _rut.ToString("0,0"), _dv);
+            }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Rut no puede ir vacío");
+                }
+                value = value.Replace(" ", "").Replace(",", "").Replace(".", "").Replace("-", "").ToLower();
+                _dv = value[value.Length - 1].ToString();
+                value = value.Remove(value.Length - 1);
+                int dvn;
+                //Verificar
+                if (!int.TryParse(value, out _rut) || (!int.TryParse(_dv, out dvn) && _dv != "k"))
+                {
+                    throw new ArgumentException("Rut no es válido");
+                }
+
+            }
+        }
+
+        public string EMAIL { get; set; }
         public int TELEFONO { get; set; }
         public string RUBRO { get; set; }
-        public int CIUDAD_ID_CIUDAD { get; set; }
-        public string Nombre_Ciudad { get; set; }
+        public int CIUDAD_ID { get; set; }
+
 
         public Proveedor()
         {
@@ -26,11 +54,11 @@ namespace YUYITOS.Negocio
         {
             ID_PROVEEDOR = 0;
             NOMBRE = "";
-            RUT = 0;
-            DV = "7";
+            _rut = 0;
+            EMAIL = "";
             TELEFONO = 123456;
             RUBRO = "MIAU";
-            CIUDAD_ID_CIUDAD = 1;
+            CIUDAD_ID = 1;
         }
 
         public int GetId()
@@ -55,13 +83,13 @@ namespace YUYITOS.Negocio
             try
             {
                 Dato.PROVEEDOR unProveedor = Conexion.YuyitosDB.PROVEEDOR.First(em => em.ID_PROVEEDOR == ID_PROVEEDOR);
-                ID_PROVEEDOR = unProveedor.ID_PROVEEDOR;
+                ID_PROVEEDOR = (int)unProveedor.ID_PROVEEDOR;
                 NOMBRE = unProveedor.NOMBRE;
-                RUT = unProveedor.RUT;
-                DV = unProveedor.DV;
+                Rut = unProveedor.RUT + unProveedor.DV;
+                EMAIL = unProveedor.EMAIL;
                 TELEFONO = unProveedor.TELEFONO;
                 RUBRO = unProveedor.RUBRO;
-                CIUDAD_ID_CIUDAD = unProveedor.CIUDAD_ID_CIUDAD;
+                CIUDAD_ID = unProveedor.CIUDAD_ID;
 
                 return true;
             }
@@ -70,19 +98,20 @@ namespace YUYITOS.Negocio
                 return false;
             }
         }
-        public bool Registrar()
+        public bool Create()
         {
             try
             {
                 Dato.PROVEEDOR prove = new Dato.PROVEEDOR()
                 {
-                    RUT = RUT,
-                    DV = DV,
+                    RUT = _rut,
+                    DV = _dv,
                     ID_PROVEEDOR = ID_PROVEEDOR,
                     NOMBRE = NOMBRE,
+                    EMAIL = EMAIL,
                     TELEFONO = TELEFONO,
                     RUBRO = RUBRO,
-                    CIUDAD_ID_CIUDAD = CIUDAD_ID_CIUDAD
+                    CIUDAD_ID = CIUDAD_ID
                 };
                 Conexion.YuyitosDB.PROVEEDOR.Add(prove);
                 Conexion.YuyitosDB.SaveChanges();
@@ -95,16 +124,18 @@ namespace YUYITOS.Negocio
             }
         }
 
-        public bool Actualizar()
+        public bool Update()
         {
             try
             {
-                Dato.PROVEEDOR prove = Conexion.YuyitosDB.PROVEEDOR.First(p => p.RUT == RUT && p.DV == DV);
+                Dato.PROVEEDOR prove = Conexion.YuyitosDB.PROVEEDOR.First(p => p.ID_PROVEEDOR == ID_PROVEEDOR);
                 prove.ID_PROVEEDOR = ID_PROVEEDOR;
                 prove.NOMBRE = NOMBRE;
+                prove.RUT = _rut;
+                prove.EMAIL = EMAIL;
                 prove.TELEFONO = TELEFONO;
                 prove.RUBRO = RUBRO;
-                prove.CIUDAD_ID_CIUDAD = CIUDAD_ID_CIUDAD;
+                prove.CIUDAD_ID = CIUDAD_ID;
                 Conexion.YuyitosDB.SaveChanges();
                 return true;
             }

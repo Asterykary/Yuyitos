@@ -14,19 +14,14 @@ namespace YUYITOS.Dato
     
     public partial class DETALLE_ORDEN
     {
-        public DETALLE_ORDEN()
-        {
-            this.PRODUCTO1 = new HashSet<PRODUCTO>();
-        }
-    
         public int ID_DETALLE_ORDEN { get; set; }
         public string DESCRIPCION { get; set; }
-        public decimal ORDEN_ID_ORDEN { get; set; }
+        public decimal ORDEN_ID { get; set; }
         public int CANT_DETALLE_O { get; set; }
-        public int PRODUCTO_ID_PRODUCTO { get; set; }
+        public string ESTADO_DET_ORDEN { get; set; }
+        public int PRODUCTO_PROVEEDOR_ID { get; set; }
     
         public virtual ORDEN ORDEN { get; set; }
-        public virtual PRODUCTO PRODUCTO { get; set; }
-        public virtual ICollection<PRODUCTO> PRODUCTO1 { get; set; }
+        public virtual PRODUCTO_PROVEEDOR PRODUCTO_PROVEEDOR { get; set; }
     }
 }

@@ -6,7 +6,7 @@
     </Key>
     <Property Name="ID_ABONO" Type="Int32" Nullable="false" />
     <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
-    <Property Name="CLIENTE_FIADO_ID_CLIENTE_FIADO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CLIENTE_FIADO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
     <NavigationProperty Name="CLIENTE_FIADO" Relationship="Self.ABONO_FIADO_CLIENTE_FIADO_FK" FromRole="ABONO_FIADO" ToRole="CLIENTE_FIADO" />
   </EntityType>
   <EntityType Name="BOLETA">
@@ -14,8 +14,8 @@
       <PropertyRef Name="ID_BOLETA" />
     </Key>
     <Property Name="ID_BOLETA" Type="Int32" Nullable="false" />
-    <Property Name="TOTAL" Type="Int32" Nullable="false" />
-    <Property Name="CLIENTE_ID_CLIENTE" Type="Int32" Nullable="false" />
+    <Property Name="TOTAL_NETO" Type="Int32" Nullable="false" />
+    <Property Name="CLIENTE_RUT" Type="Int32" Nullable="false" />
     <Property Name="FECHA_BOLETA" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="CLIENTE" Relationship="Self.BOLETA_CLIENTE_FK" FromRole="BOLETA" ToRole="CLIENTE" />
     <NavigationProperty Name="DETALLE_BOLETA" Relationship="Self.DETALLE_BOLETA_BOLETA_FK" FromRole="BOLETA" ToRole="DETALLE_BOLETA" />
@@ -30,10 +30,12 @@
   </EntityType>
   <EntityType Name="CLIENTE">
     <Key>
-      <PropertyRef Name="ID_CLIENTE" />
+      <PropertyRef Name="RUT_CLIENTE" />
     </Key>
-    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+    <Property Name="RUT_CLIENTE" Type="Int32" Nullable="false" />
     <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="BOLETA" Relationship="Self.BOLETA_CLIENTE_FK" FromRole="CLIENTE" ToRole="BOLETA" />
     <NavigationProperty Name="CLIENTE_FIADO" Relationship="Self.CLIENTE_FIADO_CLIENTE_FK" FromRole="CLIENTE" ToRole="CLIENTE_FIADO" />
   </EntityType>
@@ -42,9 +44,8 @@
       <PropertyRef Name="ID_CLIENTE_FIADO" />
     </Key>
     <Property Name="ID_CLIENTE_FIADO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="ESTADO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="FECHA_CONVENIDA" Type="DateTime" Nullable="false" />
-    <Property Name="CLIENTE_ID_CLIENTE" Type="Int32" Nullable="false" />
+    <Property Name="CLIENTE_RUT" Type="Int32" Nullable="false" />
     <Property Name="MONTO_TOTAL" Type="Int32" Nullable="false" />
     <Property Name="MONTO_PAGADO" Type="Int32" Nullable="false" />
     <Property Name="MONTO_ADEUDADO" Type="Int32" Nullable="false" />
@@ -57,10 +58,10 @@
       <PropertyRef Name="ID_DETALLE_BOLETA" />
     </Key>
     <Property Name="ID_DETALLE_BOLETA" Type="Int32" Nullable="false" />
-    <Property Name="BOLETA_ID_BOLETA" Type="Int32" Nullable="false" />
-    <Property Name="PRODUCTO_ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="BOLETA_ID" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE_STOCK_ID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="BOLETA" Relationship="Self.DETALLE_BOLETA_BOLETA_FK" FromRole="DETALLE_BOLETA" ToRole="BOLETA" />
-    <NavigationProperty Name="PRODUCTO" Relationship="Self.DETALLE_BOLETA_PRODUCTO_FK" FromRole="DETALLE_BOLETA" ToRole="PRODUCTO" />
+    <NavigationProperty Name="DETALLE_STOCK" Relationship="Self.BOLETA_DETALLE_STOCK_FK" FromRole="DETALLE_BOLETA" ToRole="DETALLE_STOCK" />
   </EntityType>
   <EntityType Name="DETALLE_ORDEN">
     <Key>
@@ -68,12 +69,12 @@
     </Key>
     <Property Name="ID_DETALLE_ORDEN" Type="Int32" Nullable="false" />
     <Property Name="DESCRIPCION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ORDEN_ID_ORDEN" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ORDEN_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
     <Property Name="CANT_DETALLE_O" Type="Int32" Nullable="false" />
-    <Property Name="PRODUCTO_ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="ESTADO_DET_ORDEN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PRODUCTO_PROVEEDOR_ID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ORDEN" Relationship="Self.DETALLE_ORDEN_ORDEN_FK" FromRole="DETALLE_ORDEN" ToRole="ORDEN" />
-    <NavigationProperty Name="PRODUCTO" Relationship="Self.DETALLE_ORDEN_PRODUCTO_FK" FromRole="DETALLE_ORDEN" ToRole="PRODUCTO" />
-    <NavigationProperty Name="PRODUCTO1" Relationship="Self.DETALLE_ORDEN_PRODUCTO" FromRole="DETALLE_ORDEN" ToRole="PRODUCTO" />
+    <NavigationProperty Name="PRODUCTO_PROVEEDOR" Relationship="Self.DETALLE_ORDEN_PRODUCTO_FK" FromRole="DETALLE_ORDEN" ToRole="PRODUCTO_PROVEEDOR" />
   </EntityType>
   <EntityType Name="DETALLE_RECEPCION">
     <Key>
@@ -81,10 +82,9 @@
     </Key>
     <Property Name="ID_DETALLE_RECEPCION" Type="Int32" Nullable="false" />
     <Property Name="CANT_DETALLE_RECEP" Type="Int32" Nullable="false" />
-    <Property Name="RECEPCION_ID_RECEPCION" Type="Int32" Nullable="false" />
-    <Property Name="PRODUCTO_ID_PRODUCTO" Type="Int32" Nullable="false" />
     <Property Name="STOCK_ID_STOCK" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <NavigationProperty Name="PRODUCTO" Relationship="Self.DETALLE_RECEPCION_PRODUCTO_FK" FromRole="DETALLE_RECEPCION" ToRole="PRODUCTO" />
+    <Property Name="RECEPCION_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RECEPCION" Relationship="Self.DETALLE_RECEPCION_RECEPCION_FK" FromRole="DETALLE_RECEPCION" ToRole="RECEPCION" />
     <NavigationProperty Name="STOCK" Relationship="Self.DETALLE_RECEPCION_STOCK_FK" FromRole="DETALLE_RECEPCION" ToRole="STOCK" />
   </EntityType>
   <EntityType Name="DETALLE_STOCK">
@@ -94,9 +94,10 @@
     <Property Name="ID_DETALLE_STOCK" Type="Int32" Nullable="false" />
     <Property Name="CANT_DETALLE_STOCK" Type="Int32" Nullable="false" />
     <Property Name="CODIGO_BARRA" Type="Int32" Nullable="false" />
-    <Property Name="PRODUCTO_ID_PRODUCTO" Type="Int32" Nullable="false" />
     <Property Name="STOCK_ID_STOCK" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <NavigationProperty Name="PRODUCTO" Relationship="Self.DETALLE_STOCK_PRODUCTO_FK" FromRole="DETALLE_STOCK" ToRole="PRODUCTO" />
+    <Property Name="PRODUCTO_PROVEEDOR_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DETALLE_BOLETA" Relationship="Self.BOLETA_DETALLE_STOCK_FK" FromRole="DETALLE_STOCK" ToRole="DETALLE_BOLETA" />
+    <NavigationProperty Name="PRODUCTO_PROVEEDOR" Relationship="Self.DETALLE_STOCK_PROD_FK" FromRole="DETALLE_STOCK" ToRole="PRODUCTO_PROVEEDOR" />
     <NavigationProperty Name="STOCK" Relationship="Self.DETALLE_STOCK_STOCK_FK" FromRole="DETALLE_STOCK" ToRole="STOCK" />
   </EntityType>
   <EntityType Name="FAMILIA">
@@ -112,9 +113,8 @@
       <PropertyRef Name="ID_ORDEN" />
     </Key>
     <Property Name="ID_ORDEN" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="ID_USUARIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
     <Property Name="CREADO_EN" Type="DateTime" Nullable="false" />
-    <Property Name="PROVEEDOR_ID_PROVEEDOR" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PROVEEDOR_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
     <Property Name="ESTADO_ORDEN" Type="Int16" Nullable="false" />
     <NavigationProperty Name="DETALLE_ORDEN" Relationship="Self.DETALLE_ORDEN_ORDEN_FK" FromRole="ORDEN" ToRole="DETALLE_ORDEN" />
     <NavigationProperty Name="PROVEEDOR" Relationship="Self.ORDEN_PROVEEDOR_FK" FromRole="ORDEN" ToRole="PROVEEDOR" />
@@ -126,19 +126,27 @@
     </Key>
     <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
     <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PRECIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="TIPO_PRODUCTO_ID_TIPO_PRODUCTO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="FAMILIA_ID_FAMILIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="TIPO_ALIMENTO_ID_TIPO_ALIMENTO" Type="Decimal" Precision="38" Scale="0" />
-    <NavigationProperty Name="DETALLE_BOLETA" Relationship="Self.DETALLE_BOLETA_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="DETALLE_BOLETA" />
-    <NavigationProperty Name="DETALLE_ORDEN" Relationship="Self.DETALLE_ORDEN_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="DETALLE_ORDEN" />
-    <NavigationProperty Name="DETALLE_RECEPCION" Relationship="Self.DETALLE_RECEPCION_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="DETALLE_RECEPCION" />
-    <NavigationProperty Name="DETALLE_STOCK" Relationship="Self.DETALLE_STOCK_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="DETALLE_STOCK" />
+    <Property Name="PRECIO_COMPRA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TIPO_PRODUCTO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FAMILIA_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="TIPO_ALIMENTO_ID" Type="Decimal" Precision="38" Scale="0" />
     <NavigationProperty Name="FAMILIA" Relationship="Self.PRODUCTO_FAMILIA_FK" FromRole="PRODUCTO" ToRole="FAMILIA" />
+    <NavigationProperty Name="PRODUCTO_PROVEEDOR" Relationship="Self.PRODUCTO_PROVEEDOR_FK" FromRole="PRODUCTO" ToRole="PRODUCTO_PROVEEDOR" />
     <NavigationProperty Name="TIPO_ALIMENTO" Relationship="Self.PRODUCTO_TIPO_ALIMENTO_FK" FromRole="PRODUCTO" ToRole="TIPO_ALIMENTO" />
     <NavigationProperty Name="TIPO_PRODUCTO" Relationship="Self.PRODUCTO_TIPO_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="TIPO_PRODUCTO" />
-    <NavigationProperty Name="STOCK" Relationship="Self.STOCK_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="STOCK" />
-    <NavigationProperty Name="DETALLE_ORDEN1" Relationship="Self.DETALLE_ORDEN_PRODUCTO" FromRole="PRODUCTO" ToRole="DETALLE_ORDEN" />
+  </EntityType>
+  <EntityType Name="PRODUCTO_PROVEEDOR">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO_P" />
+    </Key>
+    <Property Name="ID_PRODUCTO_P" Type="Int32" Nullable="false" />
+    <Property Name="PRODUCTO_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROVEEDOR_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PRECIO_VENTA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DETALLE_ORDEN" Relationship="Self.DETALLE_ORDEN_PRODUCTO_FK" FromRole="PRODUCTO_PROVEEDOR" ToRole="DETALLE_ORDEN" />
+    <NavigationProperty Name="DETALLE_STOCK" Relationship="Self.DETALLE_STOCK_PROD_FK" FromRole="PRODUCTO_PROVEEDOR" ToRole="DETALLE_STOCK" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.PRODUCTO_PROVEEDOR_FK" FromRole="PRODUCTO_PROVEEDOR" ToRole="PRODUCTO" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Self.PRODUCTO_PROVEEDOR_FKV2" FromRole="PRODUCTO_PROVEEDOR" ToRole="PROVEEDOR" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -148,13 +156,14 @@
     <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="RUT" Type="Int32" Nullable="false" />
     <Property Name="DV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TELEFONO" Type="Int32" Nullable="false" />
     <Property Name="RUBRO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CIUDAD_ID_CIUDAD" Type="Int32" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CIUDAD" Relationship="Self.PROVEEDOR_CIUDAD_FK" FromRole="PROVEEDOR" ToRole="CIUDAD" />
     <NavigationProperty Name="ORDEN" Relationship="Self.ORDEN_PROVEEDOR_FK" FromRole="PROVEEDOR" ToRole="ORDEN" />
+    <NavigationProperty Name="PRODUCTO_PROVEEDOR" Relationship="Self.PRODUCTO_PROVEEDOR_FKV2" FromRole="PROVEEDOR" ToRole="PRODUCTO_PROVEEDOR" />
     <NavigationProperty Name="RECEPCION" Relationship="Self.RECEPCION_PROVEEDOR_FK" FromRole="PROVEEDOR" ToRole="RECEPCION" />
-    <NavigationProperty Name="STOCK" Relationship="Self.STOCK_PROVEEDOR_FK" FromRole="PROVEEDOR" ToRole="STOCK" />
   </EntityType>
   <EntityType Name="RECEPCION">
     <Key>
@@ -162,13 +171,11 @@
     </Key>
     <Property Name="ID_RECEPCION" Type="Int32" Nullable="false" />
     <Property Name="FECHA" Type="DateTime" Nullable="false" />
-    <Property Name="STOCK_ID_STOCK" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="PROVEEDOR_ID_PROVEEDOR" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="PROVEEDOR_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
     <Property Name="ORDEN_ID_ORDEN" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="DETALLE_RECEP_ID_D_RECEP" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DETALLE_RECEPCION" Relationship="Self.DETALLE_RECEPCION_RECEPCION_FK" FromRole="RECEPCION" ToRole="DETALLE_RECEPCION" />
     <NavigationProperty Name="ORDEN" Relationship="Self.RECEPCION_ORDEN_FK" FromRole="RECEPCION" ToRole="ORDEN" />
     <NavigationProperty Name="PROVEEDOR" Relationship="Self.RECEPCION_PROVEEDOR_FK" FromRole="RECEPCION" ToRole="PROVEEDOR" />
-    <NavigationProperty Name="STOCK" Relationship="Self.RECEPCION_STOCK_FK" FromRole="RECEPCION" ToRole="STOCK" />
   </EntityType>
   <EntityType Name="STOCK">
     <Key>
@@ -176,14 +183,8 @@
     </Key>
     <Property Name="ID_STOCK" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
     <Property Name="FECHA_VENCIMIENTO" Type="DateTime" Nullable="false" />
-    <Property Name="CODIGO_BARRA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="PRODUCTO_ID_PRODUCTO" Type="Int32" Nullable="false" />
-    <Property Name="PROVEEDOR_ID_PROVEEDOR" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
     <NavigationProperty Name="DETALLE_RECEPCION" Relationship="Self.DETALLE_RECEPCION_STOCK_FK" FromRole="STOCK" ToRole="DETALLE_RECEPCION" />
     <NavigationProperty Name="DETALLE_STOCK" Relationship="Self.DETALLE_STOCK_STOCK_FK" FromRole="STOCK" ToRole="DETALLE_STOCK" />
-    <NavigationProperty Name="PRODUCTO" Relationship="Self.STOCK_PRODUCTO_FK" FromRole="STOCK" ToRole="PRODUCTO" />
-    <NavigationProperty Name="PROVEEDOR" Relationship="Self.STOCK_PROVEEDOR_FK" FromRole="STOCK" ToRole="PROVEEDOR" />
-    <NavigationProperty Name="RECEPCION" Relationship="Self.RECEPCION_STOCK_FK" FromRole="STOCK" ToRole="RECEPCION" />
   </EntityType>
   <EntityType Name="TIPO_ALIMENTO">
     <Key>
@@ -217,8 +218,8 @@
     <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
     <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CONTRASENHA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TOKEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TIPO_USUARIO_ID_TIPO_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="TOKEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TIPO_USUARIO_ID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="TIPO_USUARIO" Relationship="Self.USUARIO_TIPO_USUARIO_FK" FromRole="USUARIO" ToRole="TIPO_USUARIO" />
   </EntityType>
   <Association Name="ABONO_FIADO_CLIENTE_FIADO_FK">
@@ -229,7 +230,7 @@
         <PropertyRef Name="ID_CLIENTE_FIADO" />
       </Principal>
       <Dependent Role="ABONO_FIADO">
-        <PropertyRef Name="CLIENTE_FIADO_ID_CLIENTE_FIADO" />
+        <PropertyRef Name="CLIENTE_FIADO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -238,10 +239,10 @@
     <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
+        <PropertyRef Name="RUT_CLIENTE" />
       </Principal>
       <Dependent Role="BOLETA">
-        <PropertyRef Name="CLIENTE_ID_CLIENTE" />
+        <PropertyRef Name="CLIENTE_RUT" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -253,7 +254,7 @@
         <PropertyRef Name="ID_BOLETA" />
       </Principal>
       <Dependent Role="DETALLE_BOLETA">
-        <PropertyRef Name="BOLETA_ID_BOLETA" />
+        <PropertyRef Name="BOLETA_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -265,7 +266,7 @@
         <PropertyRef Name="ID_CIUDAD" />
       </Principal>
       <Dependent Role="PROVEEDOR">
-        <PropertyRef Name="CIUDAD_ID_CIUDAD" />
+        <PropertyRef Name="CIUDAD_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -274,22 +275,22 @@
     <End Role="CLIENTE_FIADO" Type="Self.CLIENTE_FIADO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
+        <PropertyRef Name="RUT_CLIENTE" />
       </Principal>
       <Dependent Role="CLIENTE_FIADO">
-        <PropertyRef Name="CLIENTE_ID_CLIENTE" />
+        <PropertyRef Name="CLIENTE_RUT" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="DETALLE_BOLETA_PRODUCTO_FK">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+  <Association Name="BOLETA_DETALLE_STOCK_FK">
+    <End Role="DETALLE_STOCK" Type="Self.DETALLE_STOCK" Multiplicity="1" />
     <End Role="DETALLE_BOLETA" Type="Self.DETALLE_BOLETA" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="ID_PRODUCTO" />
+      <Principal Role="DETALLE_STOCK">
+        <PropertyRef Name="ID_DETALLE_STOCK" />
       </Principal>
       <Dependent Role="DETALLE_BOLETA">
-        <PropertyRef Name="PRODUCTO_ID_PRODUCTO" />
+        <PropertyRef Name="DETALLE_STOCK_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -301,31 +302,31 @@
         <PropertyRef Name="ID_ORDEN" />
       </Principal>
       <Dependent Role="DETALLE_ORDEN">
-        <PropertyRef Name="ORDEN_ID_ORDEN" />
+        <PropertyRef Name="ORDEN_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="DETALLE_ORDEN_PRODUCTO_FK">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="PRODUCTO_PROVEEDOR" Type="Self.PRODUCTO_PROVEEDOR" Multiplicity="1" />
     <End Role="DETALLE_ORDEN" Type="Self.DETALLE_ORDEN" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="ID_PRODUCTO" />
+      <Principal Role="PRODUCTO_PROVEEDOR">
+        <PropertyRef Name="ID_PRODUCTO_P" />
       </Principal>
       <Dependent Role="DETALLE_ORDEN">
-        <PropertyRef Name="PRODUCTO_ID_PRODUCTO" />
+        <PropertyRef Name="PRODUCTO_PROVEEDOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="DETALLE_RECEPCION_PRODUCTO_FK">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+  <Association Name="DETALLE_RECEPCION_RECEPCION_FK">
+    <End Role="RECEPCION" Type="Self.RECEPCION" Multiplicity="1" />
     <End Role="DETALLE_RECEPCION" Type="Self.DETALLE_RECEPCION" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="ID_PRODUCTO" />
+      <Principal Role="RECEPCION">
+        <PropertyRef Name="ID_RECEPCION" />
       </Principal>
       <Dependent Role="DETALLE_RECEPCION">
-        <PropertyRef Name="PRODUCTO_ID_PRODUCTO" />
+        <PropertyRef Name="RECEPCION_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -341,15 +342,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="DETALLE_STOCK_PRODUCTO_FK">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+  <Association Name="DETALLE_STOCK_PROD_FK">
+    <End Role="PRODUCTO_PROVEEDOR" Type="Self.PRODUCTO_PROVEEDOR" Multiplicity="1" />
     <End Role="DETALLE_STOCK" Type="Self.DETALLE_STOCK" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="ID_PRODUCTO" />
+      <Principal Role="PRODUCTO_PROVEEDOR">
+        <PropertyRef Name="ID_PRODUCTO_P" />
       </Principal>
       <Dependent Role="DETALLE_STOCK">
-        <PropertyRef Name="PRODUCTO_ID_PRODUCTO" />
+        <PropertyRef Name="PRODUCTO_PROVEEDOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -373,7 +374,7 @@
         <PropertyRef Name="ID_FAMILIA" />
       </Principal>
       <Dependent Role="PRODUCTO">
-        <PropertyRef Name="FAMILIA_ID_FAMILIA" />
+        <PropertyRef Name="FAMILIA_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -385,7 +386,7 @@
         <PropertyRef Name="ID_PROVEEDOR" />
       </Principal>
       <Dependent Role="ORDEN">
-        <PropertyRef Name="PROVEEDOR_ID_PROVEEDOR" />
+        <PropertyRef Name="PROVEEDOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -401,6 +402,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="PRODUCTO_PROVEEDOR_FK">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="PRODUCTO_PROVEEDOR" Type="Self.PRODUCTO_PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="PRODUCTO_PROVEEDOR">
+        <PropertyRef Name="PRODUCTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="PRODUCTO_TIPO_ALIMENTO_FK">
     <End Role="TIPO_ALIMENTO" Type="Self.TIPO_ALIMENTO" Multiplicity="0..1" />
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
@@ -409,7 +422,7 @@
         <PropertyRef Name="ID_TIPO_ALIMENTO" />
       </Principal>
       <Dependent Role="PRODUCTO">
-        <PropertyRef Name="TIPO_ALIMENTO_ID_TIPO_ALIMENTO" />
+        <PropertyRef Name="TIPO_ALIMENTO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -421,19 +434,19 @@
         <PropertyRef Name="ID_TIPO_PRODUCTO" />
       </Principal>
       <Dependent Role="PRODUCTO">
-        <PropertyRef Name="TIPO_PRODUCTO_ID_TIPO_PRODUCTO" />
+        <PropertyRef Name="TIPO_PRODUCTO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="STOCK_PRODUCTO_FK">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
-    <End Role="STOCK" Type="Self.STOCK" Multiplicity="*" />
+  <Association Name="PRODUCTO_PROVEEDOR_FKV2">
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
+    <End Role="PRODUCTO_PROVEEDOR" Type="Self.PRODUCTO_PROVEEDOR" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="ID_PRODUCTO" />
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="ID_PROVEEDOR" />
       </Principal>
-      <Dependent Role="STOCK">
-        <PropertyRef Name="PRODUCTO_ID_PRODUCTO" />
+      <Dependent Role="PRODUCTO_PROVEEDOR">
+        <PropertyRef Name="PROVEEDOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -445,31 +458,7 @@
         <PropertyRef Name="ID_PROVEEDOR" />
       </Principal>
       <Dependent Role="RECEPCION">
-        <PropertyRef Name="PROVEEDOR_ID_PROVEEDOR" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="STOCK_PROVEEDOR_FK">
-    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
-    <End Role="STOCK" Type="Self.STOCK" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PROVEEDOR">
-        <PropertyRef Name="ID_PROVEEDOR" />
-      </Principal>
-      <Dependent Role="STOCK">
-        <PropertyRef Name="PROVEEDOR_ID_PROVEEDOR" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="RECEPCION_STOCK_FK">
-    <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
-    <End Role="RECEPCION" Type="Self.RECEPCION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="STOCK">
-        <PropertyRef Name="ID_STOCK" />
-      </Principal>
-      <Dependent Role="RECEPCION">
-        <PropertyRef Name="STOCK_ID_STOCK" />
+        <PropertyRef Name="PROVEEDOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -481,13 +470,9 @@
         <PropertyRef Name="ID_TIPO_USUARIO" />
       </Principal>
       <Dependent Role="USUARIO">
-        <PropertyRef Name="TIPO_USUARIO_ID_TIPO_USUARIO" />
+        <PropertyRef Name="TIPO_USUARIO_ID" />
       </Dependent>
     </ReferentialConstraint>
-  </Association>
-  <Association Name="DETALLE_ORDEN_PRODUCTO">
-    <End Role="DETALLE_ORDEN" Type="Self.DETALLE_ORDEN" Multiplicity="*" />
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
   </Association>
   <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ABONO_FIADO" EntityType="Self.ABONO_FIADO" />
@@ -502,6 +487,7 @@
     <EntitySet Name="FAMILIA" EntityType="Self.FAMILIA" />
     <EntitySet Name="ORDEN" EntityType="Self.ORDEN" />
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
+    <EntitySet Name="PRODUCTO_PROVEEDOR" EntityType="Self.PRODUCTO_PROVEEDOR" />
     <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" />
     <EntitySet Name="RECEPCION" EntityType="Self.RECEPCION" />
     <EntitySet Name="STOCK" EntityType="Self.STOCK" />
@@ -529,8 +515,8 @@
       <End Role="CLIENTE" EntitySet="CLIENTE" />
       <End Role="CLIENTE_FIADO" EntitySet="CLIENTE_FIADO" />
     </AssociationSet>
-    <AssociationSet Name="DETALLE_BOLETA_PRODUCTO_FK" Association="Self.DETALLE_BOLETA_PRODUCTO_FK">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    <AssociationSet Name="BOLETA_DETALLE_STOCK_FK" Association="Self.BOLETA_DETALLE_STOCK_FK">
+      <End Role="DETALLE_STOCK" EntitySet="DETALLE_STOCK" />
       <End Role="DETALLE_BOLETA" EntitySet="DETALLE_BOLETA" />
     </AssociationSet>
     <AssociationSet Name="DETALLE_ORDEN_ORDEN_FK" Association="Self.DETALLE_ORDEN_ORDEN_FK">
@@ -538,19 +524,19 @@
       <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
     </AssociationSet>
     <AssociationSet Name="DETALLE_ORDEN_PRODUCTO_FK" Association="Self.DETALLE_ORDEN_PRODUCTO_FK">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODUCTO_PROVEEDOR" EntitySet="PRODUCTO_PROVEEDOR" />
       <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
     </AssociationSet>
-    <AssociationSet Name="DETALLE_RECEPCION_PRODUCTO_FK" Association="Self.DETALLE_RECEPCION_PRODUCTO_FK">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    <AssociationSet Name="DETALLE_RECEPCION_RECEPCION_FK" Association="Self.DETALLE_RECEPCION_RECEPCION_FK">
+      <End Role="RECEPCION" EntitySet="RECEPCION" />
       <End Role="DETALLE_RECEPCION" EntitySet="DETALLE_RECEPCION" />
     </AssociationSet>
     <AssociationSet Name="DETALLE_RECEPCION_STOCK_FK" Association="Self.DETALLE_RECEPCION_STOCK_FK">
       <End Role="STOCK" EntitySet="STOCK" />
       <End Role="DETALLE_RECEPCION" EntitySet="DETALLE_RECEPCION" />
     </AssociationSet>
-    <AssociationSet Name="DETALLE_STOCK_PRODUCTO_FK" Association="Self.DETALLE_STOCK_PRODUCTO_FK">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    <AssociationSet Name="DETALLE_STOCK_PROD_FK" Association="Self.DETALLE_STOCK_PROD_FK">
+      <End Role="PRODUCTO_PROVEEDOR" EntitySet="PRODUCTO_PROVEEDOR" />
       <End Role="DETALLE_STOCK" EntitySet="DETALLE_STOCK" />
     </AssociationSet>
     <AssociationSet Name="DETALLE_STOCK_STOCK_FK" Association="Self.DETALLE_STOCK_STOCK_FK">
@@ -569,6 +555,10 @@
       <End Role="ORDEN" EntitySet="ORDEN" />
       <End Role="RECEPCION" EntitySet="RECEPCION" />
     </AssociationSet>
+    <AssociationSet Name="PRODUCTO_PROVEEDOR_FK" Association="Self.PRODUCTO_PROVEEDOR_FK">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODUCTO_PROVEEDOR" EntitySet="PRODUCTO_PROVEEDOR" />
+    </AssociationSet>
     <AssociationSet Name="PRODUCTO_TIPO_ALIMENTO_FK" Association="Self.PRODUCTO_TIPO_ALIMENTO_FK">
       <End Role="TIPO_ALIMENTO" EntitySet="TIPO_ALIMENTO" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
@@ -577,29 +567,17 @@
       <End Role="TIPO_PRODUCTO" EntitySet="TIPO_PRODUCTO" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
     </AssociationSet>
-    <AssociationSet Name="STOCK_PRODUCTO_FK" Association="Self.STOCK_PRODUCTO_FK">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="STOCK" EntitySet="STOCK" />
+    <AssociationSet Name="PRODUCTO_PROVEEDOR_FKV2" Association="Self.PRODUCTO_PROVEEDOR_FKV2">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="PRODUCTO_PROVEEDOR" EntitySet="PRODUCTO_PROVEEDOR" />
     </AssociationSet>
     <AssociationSet Name="RECEPCION_PROVEEDOR_FK" Association="Self.RECEPCION_PROVEEDOR_FK">
       <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
       <End Role="RECEPCION" EntitySet="RECEPCION" />
     </AssociationSet>
-    <AssociationSet Name="STOCK_PROVEEDOR_FK" Association="Self.STOCK_PROVEEDOR_FK">
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-      <End Role="STOCK" EntitySet="STOCK" />
-    </AssociationSet>
-    <AssociationSet Name="RECEPCION_STOCK_FK" Association="Self.RECEPCION_STOCK_FK">
-      <End Role="STOCK" EntitySet="STOCK" />
-      <End Role="RECEPCION" EntitySet="RECEPCION" />
-    </AssociationSet>
     <AssociationSet Name="USUARIO_TIPO_USUARIO_FK" Association="Self.USUARIO_TIPO_USUARIO_FK">
       <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
       <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
-    <AssociationSet Name="DETALLE_ORDEN_PRODUCTO" Association="Self.DETALLE_ORDEN_PRODUCTO">
-      <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

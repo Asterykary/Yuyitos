@@ -18,7 +18,7 @@ namespace YUYITOS.Dato
         public string NOMBRE_USUARIO { get; set; }
         public string CONTRASENHA { get; set; }
         public string TOKEN { get; set; }
-        public int TIPO_USUARIO_ID_TIPO_USUARIO { get; set; }
+        public int TIPO_USUARIO_ID { get; set; }
     
         public virtual TIPO_USUARIO TIPO_USUARIO { get; set; }
     }
