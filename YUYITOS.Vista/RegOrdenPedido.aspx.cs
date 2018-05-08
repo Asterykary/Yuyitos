@@ -183,6 +183,7 @@ namespace YUYITOS.Vista
             else
             {
                 lblErrorE.Text = "Debe indicar un Item a eliminar";
+                mostrarLista();
                 
             }
 
