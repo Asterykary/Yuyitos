@@ -8,9 +8,10 @@ namespace YUYITOS.Negocio
 {
     public class Coleccion
     {
-        public List<Producto> carrito = new List<Producto>();
+        public List<Producto_proveedor> carrito = new List<Producto_proveedor>();
         
         public List<Producto> carritoVenta = new List<Producto>();
+
         public List<Producto> ListadoProductos()
         {
             List<Producto> salida = new List<Producto>();
@@ -20,7 +21,25 @@ namespace YUYITOS.Negocio
                 {
                     ID_PRODUCTO = unProducto.ID_PRODUCTO,
                     DESCRIPCION = unProducto.DESCRIPCION,
-                    PRECIO_COMPRA = (int)unProducto.PRECIO_COMPRA,
+                    FAMILIA_ID = (int)unProducto.FAMILIA_ID,
+                    TIPO_PRODUCTO_ID = (int)unProducto.TIPO_PRODUCTO_ID,
+                    PRECIO_COMPRA = (int)unProducto.PRECIO_COMPRA
+                });
+            }
+            return salida;
+        }
+        public List<Producto_proveedor> ListadoProductos_p()
+        {
+            List<Producto_proveedor> salida = new List<Producto_proveedor>();
+            foreach (Dato.PRODUCTO_PROVEEDOR unProducto in Conexion.YuyitosDB.PRODUCTO_PROVEEDOR)
+            {
+                salida.Add(new Producto_proveedor()
+                {
+                    ID_PRODUCTO_P = unProducto.ID_PRODUCTO_P,
+                    PRODUCTO_ID = unProducto.PRODUCTO_ID,
+                    PROVEEDOR_ID = (int)unProducto.PROVEEDOR_ID,
+                    PRECIO_VENTA = unProducto.PRECIO_VENTA,
+                    Descripcion = unProducto.PRODUCTO.DESCRIPCION
                 });
             }
             return salida;
@@ -34,7 +53,12 @@ namespace YUYITOS.Negocio
                 salida.Add(new Proveedor()
                 {
                     ID_PROVEEDOR = (int)unProveedor.ID_PROVEEDOR,
-                    NOMBRE = unProveedor.NOMBRE
+                    NOMBRE = unProveedor.NOMBRE,
+                    CIUDAD_ID = unProveedor.CIUDAD_ID,
+                    EMAIL = unProveedor.EMAIL,
+                    RUBRO = unProveedor.RUBRO,
+                    Rut = unProveedor.RUT.ToString(),
+                    TELEFONO = unProveedor.TELEFONO
                 });
             }
             return salida;
@@ -47,7 +71,10 @@ namespace YUYITOS.Negocio
             {
                 salida.Add(new Orden()
                 {
-                    ID_ORDEN = unaOrden.ID_ORDEN
+                    ID_ORDEN = unaOrden.ID_ORDEN,
+                    CREADO_EN = unaOrden.CREADO_EN,
+                    ESTADO_ORDEN = unaOrden.ESTADO_ORDEN,
+                    PROVEEDOR_ID = unaOrden.PROVEEDOR_ID
                 });
             }
             return salida;
@@ -60,7 +87,12 @@ namespace YUYITOS.Negocio
             {
                 salida.Add(new DetalleOrden()
                 {
-                    ID_DETALLE_ORDEN = unaOrden.ID_DETALLE_ORDEN
+                    ID_DETALLE_ORDEN = unaOrden.ID_DETALLE_ORDEN,
+                    CANT_DETALLE_O = unaOrden.CANT_DETALLE_O,
+                    DESCRIPCION = unaOrden.DESCRIPCION,
+                    ESTADO_DET_ORDEN = unaOrden.ESTADO_DET_ORDEN,
+                    ORDEN_ID = (int)unaOrden.ORDEN_ID,
+                    PRODUCTO_PROVEEDOR_ID = unaOrden.PRODUCTO_PROVEEDOR_ID
                 });
             }
             return salida;

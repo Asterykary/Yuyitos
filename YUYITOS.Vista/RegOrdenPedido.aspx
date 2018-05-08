@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h1>Registro de Orden de Pedido</h1>
-    <h1>Prueba pull remote Carlos a Karina </h1>
     <asp:Label ID="lblMensaje" runat="server" Text="" ForeColor="#0000CC"></asp:Label>
         <br />
         <div class="col-auto my-1">
@@ -14,7 +13,8 @@
                
 
             </asp:DropDownList>
-
+            <asp:Button ID="Button1" runat="server" Text="Buscar Productos" CssClass="btn btn-primary" OnClick="Button1_Click" />
+            
             <br>
             <br>
 
@@ -35,11 +35,11 @@
                         <tr>
                             <th scope="col">
                                 <div class="form-group">
-                                    <label>Ingrese Cantidad&nbsp;</label>
+                                    <label><strong>Cantidad&nbsp;</strong> </label>
                                 </div>
                             </th>
                             <th>
-                                <asp:TextBox ID="txtCantidad" runat="server" CssClass="form-control" Enabled="True"></asp:TextBox>
+                                <asp:TextBox type="number" ID="txtCantidad" runat="server" CssClass="form-control" Enabled="True"></asp:TextBox>
                                 <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                             </th>
                         </tr>
@@ -55,7 +55,7 @@
 
         </div>
         <!--table-->
-        <asp:Table ID="tablaProductos" runat="server" CssClass="table table-dark" Visible="False">
+        <asp:Table ID="tablaProductos" runat="server" CssClass="table " Visible="False">
             <asp:TableRow>
                 <asp:TableHeaderCell>Item</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Descripción</asp:TableHeaderCell>
@@ -64,25 +64,29 @@
                 <asp:TableHeaderCell>Valor Total</asp:TableHeaderCell>
             </asp:TableRow>
         </asp:Table>
-        <p>Ingrese el n° de item a eliminar: </p>
-        <asp:TextBox ID="txtEliminar" runat="server" />
-        <asp:Button ID="btnEliminar" Text="Eliminar" runat="server" CssClass="btn btn-danger" OnClick="btnEliminar_Click1" /><br /><br />
-        <table class="table table-dark">
+        <p><strong>Ingrese el n° de item a eliminar:</strong> </p>
+        <asp:TextBox type="number" ID="txtEliminar" runat="server" />
+        <asp:Button ID="btnEliminar" Text="Eliminar" runat="server" CssClass="btn btn-danger" OnClick="btnEliminar_Click1" />
+        <asp:Label ID="lblErrorE" runat="server" Text="" ForeColor="Red"></asp:Label>
+        
+        <br /><br />
+        <table class="table">
             <tbody>
                 <tr>
                     <th scope="row"></th>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Valor Neto:<asp:Label ID="lblNeto" runat="server" Text="$ 0"></asp:Label></td>
+                    <td><strong>Valor Neto:</strong><asp:Label ID="lblNeto" runat="server" Text="$ 0"></asp:Label></td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
                     <td>
-                        <asp:Button ID="btnGenerar" Text="Generar orden" runat="server" CssClass="btn btn-success" OnClick="btnGenerar_Click"  />
+                        <asp:Button ID="btnGenerar" Text="Generar orden" runat="server" CssClass="btn btn-primary" OnClick="btnGenerar_Click"  />
+                    </td>
                     <td></td>
                     <td></td>
-                    <td>Valor Iva:<asp:Label ID="lblIva" runat="server" Text="$ 0"></asp:Label></td>
+                    <td><strong>Iva:</strong><asp:Label ID="lblIva" runat="server" Text="$ 0"></asp:Label></td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
@@ -91,8 +95,9 @@
                     </td>
                     <td></td>
                     <td></td>
-                    <td>Valor Total:<asp:Label ID="lblTotal" runat="server" Text="$ 0"></asp:Label></td>
+                    <td><strong>Total:</strong><asp:Label ID="lblTotal" runat="server" Text="$ 0"></asp:Label></td>
                 </tr>
             </tbody>
         </table>
+    
 </asp:Content>

@@ -15,8 +15,10 @@ namespace YUYITOS.Negocio
 
         public Orden()
         {
-
+            
         }
+
+       
 
         public int getLastId()
         {

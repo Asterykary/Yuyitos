@@ -57,7 +57,7 @@ namespace YUYITOS.Negocio
             _rut = 0;
             EMAIL = "";
             TELEFONO = 123456;
-            RUBRO = "MIAU";
+            RUBRO = "";
             CIUDAD_ID = 1;
         }
 

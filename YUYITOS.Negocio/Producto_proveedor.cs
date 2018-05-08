@@ -13,6 +13,11 @@ namespace YUYITOS.Negocio
         public int PROVEEDOR_ID { get; set; }
         public int PRECIO_VENTA { get; set; }
 
+        public string Descripcion { get; set; }
+
+        public int Cantidad { get; set; }
+        
+
         public Producto_proveedor()
         {
 
